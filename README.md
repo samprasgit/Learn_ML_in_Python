@@ -6,5 +6,5 @@
 
 ### 数据结构算法
 
-### [动手深度学习（Pytorch实现)](https://github.com/samprasgit/Learn-ML-in_Python/tree/master/Learn-Dive-into-DL-PyTorch)
+### [动手深度学习（Pytorch实现)](https://github.com/samprasgit/Learn_ML_in_Python/tree/master/Learn-Dive-into-DL-PyTorch)
 
