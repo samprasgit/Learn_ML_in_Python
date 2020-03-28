@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [学习内容](#%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9)
+- [目录](#%E7%9B%AE%E5%BD%95)
+  - [1.计算机视觉](#1%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89)
+  - [2.自然语言处理](#2%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86)
+- [参考资料](#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Datawhale第10期组队学习活动：《动手学深度学习》Pytorch版的练习代码
 
 课程活动页面：https://www.boyuai.com/elites/course/cZu18YmweLv10OeV
