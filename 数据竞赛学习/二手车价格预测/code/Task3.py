@@ -141,3 +141,9 @@ data['brand_price_std'] = ((data['brand_price_std'] - np.min(data['brand_price_s
                            (np.max(data['brand_price_std']) - np.min(data['brand_price_std'])))
 data['brand_price_sum'] = ((data['brand_price_sum'] - np.min(data['brand_price_sum'])) /
                            (np.max(data['brand_price_sum']) - np.min(data['brand_price_sum'])))
+
+# 对类别特征进行 OneEncoder
+data = pd.get_dummies(data, columns=[
+                      'model', 'brand_price', 'brand', 'fuelType', 'gearbox', 'notRepairedDamage', 'power_bin'])
+# 这份数据可以给 LR 用
+data.to_csv('data_for_lr.csv', index=0)
