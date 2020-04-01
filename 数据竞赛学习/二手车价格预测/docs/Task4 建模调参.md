@@ -18,6 +18,8 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+图像加载不了可参考jupyter[https://github.com/samprasgit/Learn_ML_in_Python/blob/master/%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%AD%A6%E4%B9%A0/%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BB%B7%E6%A0%BC%E9%A2%84%E6%B5%8B/code/Task4%20%E5%BB%BA%E6%A8%A1%E8%B0%83%E5%8F%82.ipynb](https://github.com/samprasgit/Learn_ML_in_Python/blob/master/数据竞赛学习/二手车价格预测/code/Task4 建模调参.ipynb)
+
 ## **1** **学习目标** 
 
 - - [x] 了解常用的机器学习模型，并掌握机器学习模型的建模与调参流程
@@ -456,23 +458,13 @@ viz.poof()
 
 
 
-
-
-
+非线性模型表现结果
 
 </style>
 
-| -    | LinearRegression | DecisionTreeRegressor | RandomForestRegressor | GradientBoostingRegressor | MLPRegressor | XGBRegressor | LGBMRegressor |
-| :--- | ---------------- | --------------------: | --------------------: | ------------------------: | -----------: | -----------: | ------------- |
-| cv1  | 0.192340         |              0.199679 |              0.142387 |                  0.177219 |  1149.852733 |     0.139966 | 0.146168      |
-| cv2  | 0.193093         |              0.186864 |              0.140533 |                  0.177653 |   462.532207 |     0.140220 | 0.146167      |
-| cv3  | 0.193228         |              0.186042 |              0.139830 |                  0.177274 |   440.980327 |     0.140638 | 0.145961      |
-| cv4  | 0.191755         |              0.185118 |              0.137571 |                  0.176387 |   689.471665 |     0.138488 | 0.143913      |
-| cv5  | 0.182370         |              0.189166 |              0.131268 |                  0.165530 |   151.629030 |     0.133750 | 0.135703      |
+
 
 </div>
-
-
 
 ### 建模调参
 
@@ -480,8 +472,101 @@ viz.poof()
 
 - 手动调参
   - 贪心算法
-  - 网格调参
+
+    ```python
+    # 参数集合：
+    
+    objective = ['regression', 'regression_l1', 'mape', 'huber', 'fair']
+    
+    num_leaves = [3,5,10,15,20,40, 55]
+    max_depth = [3,5,10,15,20,40, 55]
+    bagging_fraction = []
+    feature_fraction = []
+    drop_rate = []
+    ```
+
+    ```python
+    best_obj = dict()
+    for obj in objective:
+        model = LGBMRegressor(objective=obj)
+        score = np.mean(cross_val_score(model, X=train_X, y=train_y_ln,
+                                        verbose=0, cv=5, scoring=make_scorer(mean_absolute_error)))
+        best_obj[obj] = score
+    
+    best_leaves = dict()
+    for leaves in num_leaves:
+        model = LGBMRegressor(objective=min(
+            best_obj.items(), key=lambda x: x[1])[0], num_leaves=leaves)
+        score = np.mean(cross_val_score(model, X=train_X, y=train_y_ln,
+                                        verbose=0, cv=5, scoring=make_scorer(mean_absolute_error)))
+        best_leaves[leaves] = score
+    
+    best_depth = dict()
+    for depth in max_depth:
+        model = LGBMRegressor(objective=min(best_obj.items(), key=lambda x: x[1])[0],
+                              num_leaves=min(best_leaves.items(),
+                                             key=lambda x: x[1])[0],
+                              max_depth=depth)
+        score = np.mean(cross_val_score(model, X=train_X, y=train_y_ln,
+                                        verbose=0, cv=5, scoring=make_scorer(mean_absolute_error)))
+        best_depth[depth] = score
+    ```
+
+    ```python
+    sns.lineplot(x=['0_initial', '1_turning_obj', '2_turning_leaves', '3_turning_depth'], y=[
+                 0.143, min(best_obj.values()), min(best_leaves.values()), min(best_depth.values())])
+    ```
+
+    
+
+  - 网格Grid SearchCV调参
+
+    ```python
+    from sklearn.model_selection import GridSearchCV
+    parameters = {'objective': objective,
+                  'num_leaves': num_leaves, 'max_depth': max_depth}
+    model = LGBMRegressor()
+    clf = GridSearchCV(model, parameters, cv=5)
+    clf = clf.fit(train_X, train_y)
+    clf.best_params_
+    ```
+
+    
+
   - 贝叶斯调参 
+
+    ```python
+    # 贝叶斯调参
+    from bayes_opt import BayesianOptimization
+    
+    
+    def rf_cv(num_leaves, max_depth, subsample, min_child_samples):
+        val = cross_val_score(
+            LGBMRegressor(objective='regression_l1',
+                          num_leaves=int(num_leaves),
+                          max_depth=int(max_depth),
+                          subsample=subsample,
+                          min_child_samples=int(min_child_samples)
+                          ),
+            X=train_X, y=train_y_ln, verbose=0, cv=5, scoring=make_scorer(mean_absolute_error)
+        ).mean()
+        return 1 - val
+    
+    
+    rf_bo = BayesianOptimization(
+        rf_cv,
+        {
+            'num_leaves': (2, 100),
+            'max_depth': (2, 100),
+            'subsample': (0.1, 1),
+            'min_child_samples': (2, 100)
+        }
+    )
+    
+    rf_bo.maximize()
+    ```
+
+    
 
 - 自动调参
   - auto-sklearn
