@@ -18,12 +18,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-[toc]
-
-
-
-
-
 ## **1** **学习目标** 
 
 - - [x] 了解常用的机器学习模型，并掌握机器学习模型的建模与调参流程
@@ -227,13 +221,13 @@ print('The predicted price is obvious different from true price')
 plt.show()
 ```
 
-![](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/v9-plt.png)
+![v9-plt](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/v9-plt.png)
 
 绘制特征v_9的值与标签的散点图，图片发现模型的预测结果（蓝色点）与真实标签（黑色点）的分布差异较大，且部分预测值出现了小于0的情况，说明我们的模型存在一些问题
 
 通过作图我们发现数据的标签（price）呈现长尾分布，不利于我们的建模预测
 
-![](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/train_y_plt.png)
+![train_y_plt](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/train_y_plt.png)
 
 所以对标签进行了 $log(x+1)$ 变换，使标签贴近于正态分布
 
@@ -250,7 +244,7 @@ plt.subplot(1,2,2)
 sns.distplot(train_y_ln[train_y_ln < np.quantile(train_y_ln, 0.9)])
 ```
 
-![](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/train_y_ln.png)
+![train_y_ln](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/train_y_ln.png)
 
 重新建模，查看训练的线性回归模型的截距（intercept）与权重(coef)
 
@@ -315,7 +309,7 @@ intercept:-271.37735295214725
 
 再次进行可视化，发现预测结果与真实值较
 
-![](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/v9_ln.png)
+![v9_ln](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/v9_ln.png)
 
 
 
