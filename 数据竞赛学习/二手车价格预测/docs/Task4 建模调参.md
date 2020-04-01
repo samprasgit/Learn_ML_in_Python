@@ -215,6 +215,107 @@ sorted(dict(zip(continuous_feature_names, model.coef_)).items(), key=lambda x:x[
  ('v_1', -45573.21795387407)]
 ```
 
+```python
+from matplotlib import pyplot as plt'
+subsample_index = np.random.randint(low=0, high=len(train_y), size=50)
+plt.scatter(train_X['v_9'][subsample_index], train_y[subsample_index], color='black')
+plt.scatter(train_X['v_9'][subsample_index], model.predict(train_X.loc[subsample_index]), color='blue')
+plt.xlabel('v_9')
+plt.ylabel('price')
+plt.legend(['True Price','Predicted Price'],loc='upper right')
+print('The predicted price is obvious different from true price')
+plt.show()
+```
+
+![](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/v9-plt.png)
+
+绘制特征v_9的值与标签的散点图，图片发现模型的预测结果（蓝色点）与真实标签（黑色点）的分布差异较大，且部分预测值出现了小于0的情况，说明我们的模型存在一些问题
+
+通过作图我们发现数据的标签（price）呈现长尾分布，不利于我们的建模预测
+
+![](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/train_y_plt.png)
+
+所以对标签进行了 $log(x+1)$ 变换，使标签贴近于正态分布
+
+```python
+train_y_ln = np.log(train_y + 1)
+```
+
+```python
+print('The transformed price seems like normal distribution')
+plt.figure(figsize=(15,5))
+plt.subplot(1,2,1)
+sns.distplot(train_y_ln)
+plt.subplot(1,2,2)
+sns.distplot(train_y_ln[train_y_ln < np.quantile(train_y_ln, 0.9)])
+```
+
+![](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/train_y_ln.png)
+
+重新建模，查看训练的线性回归模型的截距（intercept）与权重(coef)
+
+```python
+model = model.fit(train_X, train_y_ln)
+
+print('intercept:'+ str(model.intercept_))
+sorted(dict(zip(continuous_feature_names, model.coef_)).items(), key=lambda x:x[1], reverse=True)
+```
+
+
+
+```
+intercept:-271.37735295214725
+[('v_9', 8.021794015956836),
+ ('v_5', 5.787436813423152),
+ ('v_12', 1.6346495228937958),
+ ('v_1', 1.49326858046208),
+ ('v_11', 1.1683103471689507),
+ ('v_13', 0.9389116326754223),
+ ('v_7', 0.7095062057668579),
+ ('v_3', 0.6915362107822818),
+ ('v_0', 0.009666562073884116),
+ ('power_bin', 0.008523141634245777),
+ ('gearbox', 0.007867922542659138),
+ ('fuelType', 0.006516574815676286),
+ ('bodyType', 0.00454111461074244),
+ ('city', 0.0031322040273791658),
+ ('power', 0.0007110695883160756),
+ ('brand_price_min_x', 1.6252132274579378e-05),
+ ('brand_price_min_y', 1.625213227457927e-05),
+ ('creatDate', 1.5846788789649107e-05),
+ ('brand_amount_y', 1.4474062921760455e-06),
+ ('brand_amount_x', 1.447406292173844e-06),
+ ('brand_price_median_x', 6.776900622986613e-07),
+ ('brand_price_median_y', 6.776900622784534e-07),
+ ('brand_price_std_y', 3.838004935782697e-07),
+ ('brand_price_std_x', 3.838004935630302e-07),
+ ('brand_price_max_y', 3.099649306463753e-07),
+ ('brand_price_max_x', 3.0996493061511797e-07),
+ ('brand_price_average_x', 2.5294747354086086e-07),
+ ('brand_price_average_y', 2.5294747353975405e-07),
+ ('SaleID', 2.118442554323473e-08),
+ ('seller', 6.988187806200585e-11),
+ ('train', -4.320099833421409e-12),
+ ('brand_price_sum_y', -7.611244978221208e-11),
+ ('brand_price_sum_x', -7.611244978388074e-11),
+ ('offerType', -1.738200694489933e-10),
+ ('name', -7.027793641666465e-08),
+ ('regDate', -1.4601440543007201e-06),
+ ('regionCode', -5.378062375072283e-06),
+ ('used_time', -4.363732025020281e-05),
+ ('v_14', -0.003633396693503721),
+ ('kilometer', -0.013832372455444119),
+ ('notRepairedDamage', -0.2700348751516212),
+ ('v_4', -0.8284609990349868),
+ ('v_2', -0.9632797963981975),
+ ('v_10', -1.604298529145125),
+ ('v_8', -40.22978897413428),
+ ('v_6', -238.22531407704605)]
+```
+
+再次进行可视化，发现预测结果与真实值较
+
+![](/Users/sampras/Desktop/下载的项目/Learn_ML_in_Python/数据竞赛学习/二手车价格预测/img/v9_ln.png)
 
 
 
@@ -223,31 +324,8 @@ sorted(dict(zip(continuous_feature_names, model.coef_)).items(), key=lambda x:x[
 
 
 
-</style>
 
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>cv1</th>
-      <th>cv2</th>
-      <th>cv3</th>
-      <th>cv4</th>
-      <th>cv5</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>MAE</th>
-      <td>0.191642</td>
-      <td>0.194986</td>
-      <td>0.192737</td>
-      <td>0.195329</td>
-      <td>0.19445</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+
 
 ### 非线性模型
 
@@ -285,9 +363,9 @@ sorted(dict(zip(continuous_feature_names, model.coef_)).items(), key=lambda x:x[
 
 ## 5.参考
 
-- 《机器学习》 https://book.douban.com/subject/26708119/ (https://book.douban.com/subject/26708119/) 
-- 《统计学习方法》 https://book.douban.com/subject/10590856/ (https://book.douban.com/subject/10590856/)
--  《Python大战机器学习》 https://book.douban.com/subject/26987890/ (https://book.douban.com/subject/26987890/)
-- 《面向机器学习的特征工程》 https://book.douban.com/subject/26826639/ (https://book.douban.com/subject/26826639/)
--  《数据科学家访谈录》 https://book.douban.com/subject/30129410/ (https://book.douban.com/subject/30129410/)
+- [机器学习](https://book.douban.com/subject/26708119/)
+- [统计学习方法-李航](https://book.douban.com/subject/10590856/)
+-  [Python大战机器学习]( https://book.douban.com/subject/26987890/)
+- [面向机器学习的特征工程]( https://book.douban.com/subject/26826639/)
+-  [数据科学家访谈录]( https://book.douban.com/subject/30129410/) 
 
