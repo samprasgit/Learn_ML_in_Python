@@ -327,11 +327,114 @@ def log_transfer(func):
     return wrapper
 ```
 
+使用线性回归模型，对未处理标签的特征数据进行五折交叉验证
+
+```python
+scores = cross_val_score(model, X=train_X, y=train_y, verbose=1, cv = 5, scoring=make_scorer(log_transfer(mean_absolute_error)))
+```
+
+```
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    1.4s finished
+```
+
+```python
+print('AVG:', np.mean(scores))
+# AVG: 1.3651560942289953
+```
+
+使用线性回归模型，对处理过标签的特征数据进行五折交叉验证
+
+```python
+scores = cross_val_score(model, X=train_X, y=train_y_ln, verbose=1, cv = 5, scoring=make_scorer(mean_absolute_error))
+```
+
+```
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    1.4s finished
+```
+
+```python
+print('AVG:', np.mean(scores))
+# AVG: 0.1931621754659293 
+```
+
+```python
+scores = pd.DataFrame(scores.reshape(1,-1))
+scores.columns = ['cv' + str(x) for x in range(1, 6)]
+scores.index = ['MAE']
+scores
+```
+
+</style>
+
+|      |   cv1    |   cv2    |   cv3    |   cv4    |   cv5    |
+| :--: | :------: | :------: | :------: | :------: | :------: |
+| MAE  | 0.190711 | 0.193717 | 0.194039 | 0.191691 | 0.195653 |
+
+</div>
+
+采用时间顺序对数据集进行分隔--选用靠前时间的4/5样本当作训练集，靠后时间的1/5当作验证集，最终结果与五折交叉验证差距不大
+
+```python
+# 数据划分
+import datetime
+
+sample_feature = sample_feature.reset_index(drop=True)
+
+split_point = len(sample_feature) // 5 * 4
+
+train = sample_feature.loc[:split_point].dropna()
+val = sample_feature.loc[split_point:].dropna()
+
+train_X = train[continuous_feature_names]
+train_y_ln = np.log(train['price'] + 1)
+val_X = val[continuous_feature_names]
+val_y_ln = np.log(val['price'] + 1)
+
+model = model.fit(train_X, train_y_ln)
+
+mean_absolute_error(val_y_ln, model.predict(val_X))
+# 0.19567171875313785
+```
+
+绘制学习率曲线
+
+```python
+from sklearn.model_selection import learning_curve, validation_curve
+
+def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,n_jobs=1, train_size=np.linspace(.1, 1.0, 5 )):  
+    plt.figure()  
+    plt.title(title)  
+    if ylim is not None:  
+        plt.ylim(*ylim)  
+    plt.xlabel('Training example')  
+    plt.ylabel('score')  
+    train_sizes, train_scores, test_scores = learning_curve(estimator, X, y, cv=cv, n_jobs=n_jobs, train_sizes=train_size, scoring = make_scorer(mean_absolute_error))  
+    train_scores_mean = np.mean(train_scores, axis=1)  
+    train_scores_std = np.std(train_scores, axis=1)  
+    test_scores_mean = np.mean(test_scores, axis=1)  
+    test_scores_std = np.std(test_scores, axis=1)  
+    plt.grid()#区域  
+    plt.fill_between(train_sizes, train_scores_mean - train_scores_std,  
+                     train_scores_mean + train_scores_std, alpha=0.1,  
+                     color="r")  
+    plt.fill_between(train_sizes, test_scores_mean - test_scores_std,  
+                     test_scores_mean + test_scores_std, alpha=0.1,  
+                     color="g")  
+    plt.plot(train_sizes, train_scores_mean, 'o-', color='r',  
+             label="Training score")  
+    plt.plot(train_sizes, test_scores_mean,'o-',color="g",  
+             label="Cross-validation score")  
+    plt.legend(loc="best")  
+    return plt  
+```
+
+```python
+plot_learning_curve(LinearRegression(), 'Liner_model', train_X[:1000], train_y_ln[:1000], ylim=(0.0, 0.5), cv=5, n_jobs=1)  
+```
 
 
-
-
-### 
 
 
 
