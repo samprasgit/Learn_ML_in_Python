@@ -18,7 +18,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-图像加载不了可参考jupyter[https://github.com/samprasgit/Learn_ML_in_Python/blob/master/%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%AD%A6%E4%B9%A0/%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BB%B7%E6%A0%BC%E9%A2%84%E6%B5%8B/code/Task4%20%E5%BB%BA%E6%A8%A1%E8%B0%83%E5%8F%82.ipynb](https://github.com/samprasgit/Learn_ML_in_Python/blob/master/数据竞赛学习/二手车价格预测/code/Task4 建模调参.ipynb)
+图像加载不了可参考jupyter(https://github.com/samprasgit/Learn_ML_in_Python/blob/master/数据竞赛学习/二手车价格预测/code/Task4 建模调参.ipynb)
 
 ## **1** **学习目标** 
 
@@ -462,7 +462,13 @@ viz.poof()
 
 </style>
 
-
+|      | LinearRegression | **DecisionTreeRegressor** | RandomForestRegressor | **GradientBoostingRegressor** | **MLPRegressor** | **XGBRegressor** | **LGBMRegressor** |
+| :--- | ---------------: | ------------------------: | --------------------: | ----------------------------: | ---------------: | ---------------: | ----------------- |
+| cv1  |         0.191930 |                  0.192008 |              0.141587 |                      0.175510 |     20633.199321 |         0.138292 | 0.144619          |
+| cv2  |         0.192820 |                  0.185976 |              0.138735 |                      0.177647 |      6590.283807 |         0.138991 | 0.145589          |
+| cv3  |         0.192707 |                  0.184734 |              0.139258 |                      0.177883 |      5247.052756 |         0.137551 | 0.144937          |
+| cv4  |         0.190977 |                  0.184694 |              0.137972 |                      0.175914 |      6523.823646 |         0.137389 | 0.143592          |
+| cv5  |         0.182136 |                  0.190618 |              0.130837 |                      0.164580 |     11255.055378 |         0.131833 | 0.134843          |
 
 </div>
 
@@ -471,7 +477,7 @@ viz.poof()
 在此我们介绍了三种常用的调参方法如下：
 
 - 手动调参
-  - 贪心算法
+  - 贪心算法  
 
     ```python
     # 参数集合：
