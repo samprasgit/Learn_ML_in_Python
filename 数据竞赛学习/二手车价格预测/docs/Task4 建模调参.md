@@ -27,7 +27,6 @@
 ## **1** **学习目标** 
 
 - - [x] 了解常用的机器学习模型，并掌握机器学习模型的建模与调参流程
-- - [ ] 完成相应学习打卡任务
 
 ## **2** **内容介绍**
 
@@ -86,7 +85,7 @@
 
 ## **4** **代码示例**
 
-### - 读取数据
+#### 4.1 读取数据
 
 reduce_mem_usage 函数通过调整数据类型，帮助我们减少数据在内存中占用的空间
 
@@ -139,11 +138,82 @@ Memory usage after optimization is: 15724107.00 MB
 Decreased by 74.0%
 ```
 
-五折交叉验证
+#### 4.2 五折交叉验证的线性回归  Cross Validation
 
-> 在使用训练集对参数进行训练的时候，经常会发现人们通常会将一整个训练集分为三个部分（比如mnist手写训练集）。一般分为：训练集（train_set），验证集（valid_set），测试集（test_set）这三个部分。这其实是为了保证训练效果而特意设置的。其中测试集很好理解，其实就是完全不参与训练的数据，仅仅用来观测测试效果的数据。而训练集和评估集则牵涉到下面的知识了。
+```python
+# 缺失值处理
+sample_feature = sample_feature.dropna().replace('-', 0).reset_index(drop=True)
+# 数据类型转换
+sample_feature['notRepairedDamage'] = sample_feature['notRepairedDamage'].astype(np.float32)
+# 训练集数据划分
+train = sample_feature[continuous_feature_names + ['price']]
+train_X = train[continuous_feature_names]
+train_y = train['price']
+```
 
->因为在实际的训练中，训练的结果对于训练集的拟合程度通常还是挺好的（初始条件敏感），但是对于训练集之外的数据的拟合程度通常就不那么令人满意了。因此我们通常并不会把所有的数据集都拿来训练，而是分出一部分来（这一部分不参加训练）对训练集生成的参数进行测试，相对客观的判断这些参数对训练集之外的数据的符合程度。这种思想就称为交叉验证（Cross Validation）
+```python
+# 简单建模
+from sklearn.linear_model import LinearRegression
+model = LinearRegression(normalize=True)
+model = model.fit(train_X, train_y)
+```
+
+查看训练的线性回归模型的截距（intercept）与权重(coef)
+
+```python
+'intercept:'+ str(model.intercept_)
+
+sorted(dict(zip(continuous_feature_names, model.coef_)).items(), key=lambda x:x[1], reverse=True)
+```
+
+```
+[('v_6', 3364722.3151564174),
+ ('v_8', 699921.8482887275),
+ ('v_9', 170458.21023140344),
+ ('v_7', 32139.09132280064),
+ ('v_12', 20714.91355866134),
+ ('v_3', 18030.055035382895),
+ ('v_11', 11595.195783621277),
+ ('v_13', 11354.642135617458),
+ ('v_10', 2657.748631767479),
+ ('gearbox', 882.1038583282956),
+ ('fuelType', 364.5264412196498),
+ ('bodyType', 189.54121712220703),
+ ('power', 28.561921245758583),
+ ('brand_price_median_x', 0.255292407469609),
+ ('brand_price_median_y', 0.2552924074667841),
+ ('brand_price_std_x', 0.22524975066406236),
+ ('brand_price_std_y', 0.22524975064836486),
+ ('used_time', 0.14124619493944898),
+ ('creatDate', 0.07945640772099297),
+ ('brand_amount_y', 0.07442242106242544),
+ ('brand_amount_x', 0.07442242106229742),
+ ('regionCode', 0.05233990206739235),
+ ('regDate', 0.005310934723489556),
+ ('brand_price_max_y', 0.0015900291401336854),
+ ('brand_price_max_x', 0.0015900291396645744),
+ ('SaleID', 5.4061272118415274e-05),
+ ('seller', 2.2907042875885963e-06),
+ ('offerType', 2.3044412955641747e-07),
+ ('train', -8.009374141693115e-08),
+ ('brand_price_sum_y', -1.0875121834094359e-05),
+ ('brand_price_sum_x', -1.0875121834223323e-05),
+ ('name', -0.0002993688063223507),
+ ('brand_price_average_x', -0.20271245299857915),
+ ('brand_price_average_y', -0.20271245299859728),
+ ('brand_price_min_y', -1.122244459847303),
+ ('brand_price_min_x', -1.1222444598473038),
+ ('city', -6.976630960502906),
+ ('power_bin', -34.40153519461272),
+ ('v_14', -282.53973241865395),
+ ('kilometer', -372.91194115761215),
+ ('notRepairedDamage', -495.8428162130516),
+ ('v_0', -2059.122111733545),
+ ('v_5', -12305.51909556401),
+ ('v_4', -15197.378550338892),
+ ('v_2', -26315.17228158719),
+ ('v_1', -45573.21795387407)]
+```
 
 
 
