@@ -1,22 +1,69 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+.
+├── Learn-Dive-into-DL-PyTorch
+│   ├── Code
+│   │   ├── CNN
+│   │   ├── GAN\ 
+│   │   ├── Language-Model
+│   │   ├── Lecture1-Linear-model
+│   │   ├── Lecture2-Softmax
+│   │   ├── Lecture3-Multilayer-perceptron
+│   │   ├── Lecture4-Text-Preprocess
+│   │   ├── RNN-advanced
+│   │   ├── RNN-base
+│   │   ├── Translation
+│   │   ├── datasets
+│   │   │   └── FashionMNIST
+│   │   │       ├── processed
+│   │   │       └── raw
+│   │   ├── imgs
+│   │   └── 注�\204\217�\212\233�\234��\210��\216Seq2seq模�\236\213
+│   ├── Pytorch\ tricks
+│   ├── assignment1
+│   │   ├── dataset
+│   │   └── termproject1
+│   │       └── termproject1
+│   ├── assignment2
+│   ├── d2lzh_pytorch
+│   ├── dataset
+│   │   ├── FashionMNIST
+│   │   │   ├── processed
+│   │   │   └── raw
+│   │   ├── FashionMNIST2065
+│   │   │   └── FashionMNIST
+│   │   │       ├── processed
+│   │   │       └── raw
+│   │   ├── fra-eng
+│   │   ├── houseprices
+│   │   └── ptb
+│   ├── imgs
+│   └── slides
+├── Python�\237��\200�\237��\206梳�\220\206
+│   ├── __pycache__
+│   ├── learn_in_ML
+│   └── �\235��\225�\230
+├── leecode�\230解
+├── �\227�\225�\236�\216�
+├── �\225��\215��\236�\233学习
+│   └── �\214�\211\213车价格�\204�\213
+│       ├── code
+│       ├── data
+│       ├── docs
+│       └── img
+└── �\227�\225设计�\237��\200
+    ├── img
+    ├── leetcode
+    │   ├── array
+    │   ├── docs
+    │   ├── string
+    │   └── tree
+    ├── python�\213�\217�\221\230�\235��\225�\227�\225�\235�\205�
+    │   └── �\216\222�\210\227�\204�\220\210�\216�\202�\216\207
+    │       └── __pycache__
+    ├── �\211\221�\214\207offer
+    │   ├── C++
+    │   └── python
+    ├── �\237��\234��\225��\215��\223�\236\204
+    │   └── img
+    └── �\223\204水池�\227�\225�\236�\216��\232\217�\234��\212�样.assets
 
-- [Learn ML in Python](#learn-ml-in-python)
-    - [数据竞赛经典复现](#%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E7%BB%8F%E5%85%B8%E5%A4%8D%E7%8E%B0)
-    - [数据结构算法](#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95)
-    - [动手深度学习（Pytorch实现)](#%E5%8A%A8%E6%89%8B%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0pytorch%E5%AE%9E%E7%8E%B0)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# Learn ML in Python
-
-### 数据竞赛经典复现
-
-- [二手车价格预测]([https://github.com/samprasgit/Learn-ML-in_Python/tree/master/%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%AD%A6%E4%B9%A0/%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BB%B7%E6%A0%BC%E9%A2%84%E6%B5%8B](https://github.com/samprasgit/Learn-ML-in_Python/tree/master/数据竞赛学习/二手车价格预测))
-
-### 数据结构算法
-
-### [动手深度学习（Pytorch实现)](https://github.com/samprasgit/Learn_ML_in_Python/tree/master/Learn-Dive-into-DL-PyTorch)
-
-算法设计基础
+66 directories
