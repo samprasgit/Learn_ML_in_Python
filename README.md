@@ -2,7 +2,7 @@
 ├── Learn-Dive-into-DL-PyTorch
 │   ├── Code
 │   │   ├── CNN
-│   │   ├── GAN\ 
+│   │   ├── GAN 
 │   │   ├── Language-Model
 │   │   ├── Lecture1-Linear-model
 │   │   ├── Lecture2-Softmax
@@ -16,8 +16,8 @@
 │   │   │       ├── processed
 │   │   │       └── raw
 │   │   ├── imgs
-│   │   └── 注�\204\217�\212\233�\234��\210��\216Seq2seq模�\236\213
-│   ├── Pytorch\ tricks
+│   │   └── 注意力机制与Seq2seq模型
+│   ├── Pytorch tricks
 │   ├── assignment1
 │   │   ├── dataset
 │   │   └── termproject1
@@ -37,33 +37,33 @@
 │   │   └── ptb
 │   ├── imgs
 │   └── slides
-├── Python�\237��\200�\237��\206梳�\220\206
+├── Python基础知识梳理
 │   ├── __pycache__
 │   ├── learn_in_ML
-│   └── �\235��\225�\230
-├── leecode�\230解
-├── �\227�\225�\236�\216�
-├── �\225��\215��\236�\233学习
-│   └── �\214�\211\213车价格�\204�\213
+│   └── 面试题
+├── leecode题解
+├── 算法实现
+├── 数据竞赛学习
+│   └── 二手车价格预测
 │       ├── code
 │       ├── data
 │       ├── docs
 │       └── img
-└── �\227�\225设计�\237��\200
+└── 算法设计基础
     ├── img
     ├── leetcode
     │   ├── array
     │   ├── docs
     │   ├── string
     │   └── tree
-    ├── python�\213�\217�\221\230�\235��\225�\227�\225�\235�\205�
-    │   └── �\216\222�\210\227�\204�\220\210�\216�\202�\216\207
+    ├── python程序员面试算法宝典
+    │   └── 排列组合与概率
     │       └── __pycache__
-    ├── �\211\221�\214\207offer
+    ├── 剑指offer
     │   ├── C++
     │   └── python
-    ├── �\237��\234��\225��\215��\223�\236\204
+    ├── 基本数据结构
     │   └── img
-    └── �\223\204水池�\227�\225�\236�\216��\232\217�\234��\212�样.assets
+    └── 蓄水池算法实现随机抽样.assets
 
 66 directories
