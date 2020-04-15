@@ -78,3 +78,5 @@ English Version: [Dive into Deep Learning](https://d2l.ai/) | [Github Repo](http
 [MarkDown Emoji](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
 [优秀笔记参考]([http://www.ryluo.cn/2020/02/12/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/](http://www.ryluo.cn/2020/02/12/动手学深度学习笔记(一)/))
+
+Colab Pro
