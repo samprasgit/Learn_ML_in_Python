@@ -47,9 +47,3 @@ def reduce_mem_usage(df):
     return df
 
 sample_feature = reduce_mem_usage(pd.read_csv('data/data_for_tree.csv'))
-
-continuous_feature_names = [x for x in sample_feature.columns if x not in [
-    'price', 'brand', 'model', 'brand_price']]
-print(continuous_feature_names)
-
-# 线性回归
