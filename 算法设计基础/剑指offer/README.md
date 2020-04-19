@@ -11,6 +11,11 @@
 
 > **既然终要承受痛苦，那么尝试思考的痛总归比承受学习的苦更有意义。**
 
+### 刷题网站
+
+- [牛客网](https://www.nowcoder.com/ta/coding-interviews?from=cyc_github)
+- [Leetcode](https://leetcode-cn.com/problemset/lcof/)
+
 ### 目录
 
 
