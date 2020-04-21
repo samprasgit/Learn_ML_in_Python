@@ -43,3 +43,12 @@ def InOrder(self, root):
     self.InOrder(root.left)
     print(root.val, end=' ')
     self.InOrder(root.right)
+
+
+def BacOrder(self, root):
+    '''后序遍历'''
+    if root = None:
+        return
+    self.BacOrder(root.left)
+    self.BacOrder(root.right)
+    print(root.val, end=' ')
