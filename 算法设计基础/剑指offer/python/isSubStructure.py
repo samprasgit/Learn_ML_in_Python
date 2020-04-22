@@ -25,30 +25,3 @@ class Solution:
             return recur(pRoot1.left, pRoot2.left) and recur(pRoot1.right, pRoot2.right)
 
         return bool(pRoot1 and pRoot2) and (recur(pRoot1, pRoot2) or self.HasSubtree(pRoot1.left, pRoot2) or self.HasSubtree(pRoot1.right, pRoot2))
-
-
-def PerOrder(self, root):
-    '''前序遍历'''
-    if root = -None:
-        return
-    print(root.val, end=' ')
-    self.PreOrder(root.left)
-    self.PreOrder(root.right)
-
-
-def InOrder(self, root):
-    '''中序遍历'''
-    if root = None:
-        return
-    self.InOrder(root.left)
-    print(root.val, end=' ')
-    self.InOrder(root.right)
-
-
-def BacOrder(self, root):
-    '''后序遍历'''
-    if root = None:
-        return
-    self.BacOrder(root.left)
-    self.BacOrder(root.right)
-    print(root.val, end=' ')
