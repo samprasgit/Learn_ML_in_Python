@@ -38,6 +38,7 @@ class Solution2:
     - 横跨两个区的逆序对
 
     """
+    # 在第 2 个子区间元素归并回去的时候，计算逆序对的个数
 
     def reversePairs(self, nums):
         n = len(nums)
@@ -48,6 +49,19 @@ class Solution2:
         return self.count_reverse_pairs(nums, 0, n - 1, temp)
 
     def count_reverse_pairs(self, nums, left, right, temp):
+        '''[summary]
+
+        [description]
+
+        Arguments:
+                nums {[type]} -- [description]
+                left {[type]} -- [description]
+                right {[type]} -- [description]
+                temp {[type]} -- [description]
+
+        Returns:
+                number -- [description]
+        '''
         # 在数组nums的区间[left,right]统计逆序对
         if left == right:
             return 0
@@ -84,6 +98,11 @@ class Solution2:
                 j += 1
                 res += (mid - i + 1)
         return res
+
+
+class Solution3:
+
+    def
 
 
 if __name__ == "__main__":
