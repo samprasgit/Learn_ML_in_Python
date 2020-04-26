@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [使用list和tuple](#%E4%BD%BF%E7%94%A8list%E5%92%8Ctuple)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 [廖雪峰的官方网站](https://www.liaoxuefeng.com/)
 
 #### 使用list和tuple

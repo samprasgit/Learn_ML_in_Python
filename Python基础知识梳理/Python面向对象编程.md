@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [类和对象](#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1)
+- [类的定义](#%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89)
+  - [只包含方法的类](#%E5%8F%AA%E5%8C%85%E5%90%AB%E6%96%B9%E6%B3%95%E7%9A%84%E7%B1%BB)
+  - [创建对象](#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1)
+  - [Self参数](#self%E5%8F%82%E6%95%B0)
+- [参考：](#%E5%8F%82%E8%80%83)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Python面向对象编程
 
 ## 类和对象
