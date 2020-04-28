@@ -100,12 +100,67 @@ class Solution2:
         return res
 
 
-class Solution3:
+class FenwickTree:
 
-    def
+    def __init__(self, n):
+        self.size = n
+        self.tree = [0 for _ in range(n + 1)]
+
+    def __lowbit(self, index):
+        return index & (-index)
+
+    # 单点更细：从上往下，最多到len,可以取等
+    def update(self, index, delta):
+        while (index <= self.size):
+            self.tree[index] += delta
+            index += self.__lowbit(index)
+
+    # 区间查询，从上往下，最少到1，可以取等
+    def query(self, index):
+        res = 0
+        while index > 0:
+            res += self.tree[index]
+            index -= self.__lowbit(index)
+
+        return res
+
+
+class Solution3:
+    '''
+    树状数组
+    '''
+
+    def reversePairs(self, nums):
+        size = len(nums)
+        if size < 2:
+            return 0
+        # 离散化 原始数组去重从小大大排序
+        s = list(set(nums))
+        # 构造最小堆，从小到大一个个拿出来
+        import heapq
+        heapq.heapify(s)
+        # 由数字查排名
+        rank_map = dict()
+        rank = 1
+        # 不重复的数字
+        rank_map_size = len(s)
+        for _ in range(rank_map_size):
+            num = heapq.heappop(s)
+            rank_map[num] = rank
+            rank += 1
+
+        res = 0
+        ft = FenwickTree(rank_map_size)
+        # 从后往前看，拿出一个数字，就更一下，然后向前查询比它小的个数
+        for i in range(size - 1, -1, -1):
+            rank = rank_map[nums[i]]
+            ft.update(rank, 1)
+            res += ft.query(rank - 1)
+        return res
 
 
 if __name__ == "__main__":
-    s2 = Solution2()
+    s2 = Solution3()
     nums = [7, 5, 6, 4]
-    print(s2.reversePairs(nums))
+    num2 = [2, 3, 5, 7, 1, 4, 6, 8]
+    print(s2.reversePairs(num2))

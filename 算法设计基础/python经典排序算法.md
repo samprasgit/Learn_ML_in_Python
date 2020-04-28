@@ -315,21 +315,21 @@ Out-place：占用额外内存
 
 
 
-算法描述
+#### 算法描述
 
-1. 请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列；
+1. 申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列；
 2. 设定两个指针，最初位置分别为两个已经排序序列的起始位置；
 3. 比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置；
 4. 重复步骤 3 直到某一指针达到序列尾；
 5. 将另一序列剩下的所有元素直接复制到合并序列尾。
 
-动图演示
+#### 动图演示
 
 ![](img/归并排序.gif)
 
 
 
-code in python  
+#### Code in Python  
 
 ```python
     def merge(self, left, right):
@@ -351,8 +351,8 @@ code in python
         n = len(arry)
         if n < 2:
             return arry
-        middle = n // 2
-        left, right = arry[0: middle], arry[middle:]
+        mid = n // 2
+        left, right = arry[0: mid], arry[mid+1:]
 
         return merge(mergeSort(left), mergeSort(right))
 ```
@@ -567,5 +567,5 @@ def bucket_sort(nums):
 
 
 
-
+/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl
 
