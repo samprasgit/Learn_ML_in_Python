@@ -7,7 +7,7 @@ class Solution:
         dp.append(0)
         min_value = prices[0]
         for i in range(1, len(prices)):
-            pd.append(max(dp[i - 1], prices[i] - min_value))
+            dp.append(max(dp[i - 1], prices[i] - min_value))
             if prices[i] < min_value:
                 min_value = prices[i]
 
