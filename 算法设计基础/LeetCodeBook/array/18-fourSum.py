@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 # time: 2020-04-29 16:00:43
 # 描述: 四数之和
+from typing import List
 
 
 class Solution(object):
@@ -18,7 +19,7 @@ class Solution(object):
         nums.sort()
         res = []
         for i in range(n - 3):
-            for j in range(n - 2):
+            for j in range(i + 1, n - 2):
                 left = j + 1  # 第一个指针
                 right = n - 1  # 第二个指针
                 current = nums[i] + nums[j]
@@ -38,13 +39,11 @@ class Solution(object):
                         left += 1
                     else:
                         right -= 1
-                while (j < n - 2 and nums[j] == nums[j + 1]):
+                while (j < n - 2 and nums[j] == nums[j - 1]):
                     j += 1
-            while (i < n - 3 and nums[i] == nums[i + 1]):
+            while (i < n - 3 and nums[i] == nums[i - 1]):
                 i += 1
-        # rr = set()
-        # for r in res:
-        #     rr.add(r)
+
         return res
 
 
