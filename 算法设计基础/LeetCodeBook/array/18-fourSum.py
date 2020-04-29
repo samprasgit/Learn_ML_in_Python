@@ -42,10 +42,10 @@ class Solution(object):
                     j += 1
             while (i < n - 3 and nums[i] == nums[i + 1]):
                 i += 1
-        rr = set()
-        for r in res:
-            rr.add(r)
-        return rr
+        # rr = set()
+        # for r in res:
+        #     rr.add(r)
+        return res
 
 
 if __name__ == "__main__":
