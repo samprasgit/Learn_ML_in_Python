@@ -5,9 +5,11 @@
 class Solution:
     '''
     代码注释
+
+    [description]
     '''
     def printtree(words):
-    
+
         words = ['cat', 'category', 'tree', 'trace', 'top']
         trie = {}
 
