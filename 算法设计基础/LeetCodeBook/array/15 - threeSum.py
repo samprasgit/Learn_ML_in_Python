@@ -7,10 +7,7 @@
 
 class Solution1:
 
-    '''hash-map
-    时间复杂度：
-    空间复杂度：
-    '''
+    '''hash-map'''
 
     def threeSum(self, nums):
         '''
@@ -44,10 +41,7 @@ class Solution1:
 
 
 class Solution2:
-   	'''
-    三指针
-    '''
-
+    '''三指针'''
 
     def threeSum(self, nums):
         n = len(nums)
@@ -80,7 +74,7 @@ class Solution2:
 
 
 if __name__ == "__main__":
-    s = Solution1()
+    s = Solution2()
 
     nums = [-1, 0, 1, 2, -1, -4]
     print(s.threeSum(nums))

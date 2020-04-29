@@ -1,3 +1,12 @@
+# !/usr/bin/env python
+# -*- coding:utf-8 -*-
+# time: 2020-04-29 11:07:10
+# 描述: 较小的三数之和
+# 给定一个长度为 n 的整数数组和一个目标值 target，
+# 寻找能够使条件 nums[i] + nums[j] + nums[k] < target 成立的三元组 i, j, k 个数
+# （0 <= i < j < k < n）
+
+
 class Solution(object):
 
     def threeSumSmaller(self, nums, target):

@@ -1,22 +1,41 @@
+# !/usr/bin/env python
+# -*- coding:utf-8 -*-
+# time: 2020-04-29 10:31:38
+# 描述: 最接近的三数之和
+
+
 class Solution(object):
+    '''
+    排序和双指针
+    时间复杂度：O(N^2)
+
+
+    '''
 
     def threeSumCloset(self, nums, target):
-        nums.sort()
         n = len(nums)
+        if n < 3:
+            return None
+
+        nums.sort()
+
         ans = nums[0] + nums[1] + nums[2]
         for i in range(n - 1):
-            # 第一个指针
-            j = i + 1
-            # 第二个指针
-            k = n - 1
-            while (j < k):
-                sum = nums[i] + nums[j] + nums[k]
-                if (abs(sum - target) < abs(ans - target)):
-                    ans = sum
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
 
-                if (sum > target):
+            j = i + 1
+
+            k = n - 1
+            while j < k:
+                val = nums[i] + nums[j] + nums[k]
+                # 计算差值有点浪费时间 优化？
+                if abs(val - target) < abs(ans - target):
+                    ans = val
+
+                if val > target:
                     k -= 1
-                elif (sum < target):
+                elif val < target:
                     j += 1
                 else:
                     return ans
