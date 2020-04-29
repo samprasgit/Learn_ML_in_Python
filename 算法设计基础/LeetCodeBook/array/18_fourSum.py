@@ -8,6 +8,18 @@
 class Solution:
 
     def fourSum(self, nums, target):
+        '''
+        排序+双指针
+
+        [description]
+
+        Arguments:
+                nums {[type]} -- [description]
+                target {[type]} -- [description]
+
+        Returns:
+                [type] -- [description]
+        '''
         n = len(nums)
         nums.sort()
         res = []
