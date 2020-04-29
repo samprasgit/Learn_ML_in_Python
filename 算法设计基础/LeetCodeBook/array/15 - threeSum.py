@@ -7,25 +7,47 @@
 
 class Solution1:
 
-    # hash-map
-    # 超过了时间限制
+    '''hash-map
+    时间复杂度：
+    空间复杂度：
+    '''
 
     def threeSum(self, nums):
-        target = 0
-        dic = {}
-        l = []
-        for i, num in enumerate(nums):
-            dic[num] = i
-        for i in range(len(nums)):
-            for j in range(len(nums)):
-                c = target - (nums[i] + nums[j])
-                if (i != j) and c in nums and (i != dic[c]) and (j != dic[c]):
-                    l.append(sorted([nums[i], nums[j], c]))
-        return ([list(t) for t in (set([tuple(t) for t in l]))])
+        '''
+        Arguments:
+            nums {[int]} -- [description]
+        '''
+        if len(nums) < 3:
+            return []
+        '''先对数组排序, 遍历数组遇到与前一个元素相同的情况可直接跳过'''
+        nums.sort()
+        target_hash = {-x: i for i, x in enumerate(nums)}
+        res = []
+        res_hash = {}
+        for i, first in enumerate(nums):
+            '''当前元素与前一个元素相同时, 可直接跳过以优化性能'''
+            if i > 0 and first == nums[i - 1]:
+                continue
+            for j, second in enumerate(nums[i + 1:]):
+                '''检查两数之和是否存在于哈希表中'''
+                if first + second in target_hash:
+                    target_index = target_hash[first + second]
+                    if target_index == i or target_index == i + j + 1:
+                        continue
+                    '''将找到的结果存入另一个哈希表中, 避免包含重复结果'''
+                    row = sorted([first, second, nums[target_index]])
+                    key = ",".join([str(x) for x in row])
+                    if key not in res_hash:
+                        res.append(row)
+                        res_hash[key] = True
+        return res
 
 
 class Solution2:
-    # 双指针
+   	'''
+    三指针
+    '''
+
 
     def threeSum(self, nums):
         n = len(nums)
@@ -58,7 +80,7 @@ class Solution2:
 
 
 if __name__ == "__main__":
-    s = Solution2()
+    s = Solution1()
 
     nums = [-1, 0, 1, 2, -1, -4]
     print(s.threeSum(nums))
