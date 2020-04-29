@@ -1,7 +1,14 @@
+# !/usr/bin/env python
+# -*- coding:utf-8 -*-
+# time: 2020-04-29 16:00:43
+# 描述: 四数之和
+
+
 class Solution(object):
+
     def fourSum(self, nums, target):
         """
-        双指针解决
+        排序+双指针
         去重
         :param nums:
         :param target:
@@ -17,7 +24,7 @@ class Solution(object):
                 current = nums[i] + nums[j]
                 while (left < right):
                     if (current + nums[left] + nums[right] == target):
-                        res.append([nums[i], nums[j], nums[left], nums[right]] )
+                        res.append([nums[i], nums[j], nums[left], nums[right]])
                         left += 1
                         right -= 1
                         # 第一个指针j去重
@@ -27,7 +34,6 @@ class Solution(object):
                         while (left < right and nums[right] == nums[right - 1]):
                             right -= 1
 
-
                     elif (current + nums[left] + nums[right] < target):
                         left += 1
                     else:
@@ -35,18 +41,16 @@ class Solution(object):
                 while (j < n - 2 and nums[j] == nums[j + 1]):
                     j += 1
             while (i < n - 3 and nums[i] == nums[i + 1]):
-                i+=1
-        rr=set()
+                i += 1
+        rr = set()
         for r in res:
-                rr.add(r)
+            rr.add(r)
         return rr
 
 
-
 if __name__ == "__main__":
-    s=Solution()
+    s = Solution()
     nums = [1, 0, -1, 0, -2, 2]
     target = 0
-    res=s.fourSum(nums, target)
+    res = s.fourSum(nums, target)
     print(res)
-    
