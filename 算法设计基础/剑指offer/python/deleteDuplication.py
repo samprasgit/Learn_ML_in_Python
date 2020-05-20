@@ -48,3 +48,23 @@ class Solution2:
         Arguments:
                 pHead {[type]} -- [description]
         '''
+        # 为了避免重复，链表开始之前新建一个表头
+        first = ListNode(-1)
+        first.next = pHead
+        # 遍历链表的指针
+        curr = pHead
+        # 记录不重复节点之前的最后信息
+        pre = first
+        while curr and curr.next:
+                # 当前节点不重复，继续往下走
+            if curr.val != curr.next.val:
+                curr = curr.next
+                pre = pre.next
+                # 如果重复，找到不重复的节点为止
+            else:
+                val = curr.val
+                while curr and curr.val == val:
+                    curr = curr.next
+                pre.next = curr
+
+        return first.next
