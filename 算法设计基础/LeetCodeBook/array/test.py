@@ -23,3 +23,9 @@ class Solution:
             t['#'] = '#'
 
         print(trie)
+
+
+t = (1, 3, 4, 5)
+print("原先的tuple: ", t)
+new_t = (t, 'd', 'e')
+print("新的tuple: ", new_t)
