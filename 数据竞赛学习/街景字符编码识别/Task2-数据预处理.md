@@ -97,7 +97,7 @@
 
   将 transforms 中的操作随机打乱: transforms.RandomOrder
 
-
+![数据扩增示例](Task2-数据预处理.assets/数据扩增示例.png)
 
 ## 2.3Torch读取数据
 
@@ -105,6 +105,8 @@
 
 - Dataset：对数据集的封装，提供索引方式的对数据样本进行读取     `__getitem__`中进行重载
 - DataLoder：对Dataset进行封装，提供批量读取的迭代读取
+
+**定义SVHNDataset数据集**
 
 ```python
 # 定义SVHNDataset
@@ -148,39 +150,85 @@ class SVHNDataset(Dataset):
     def __len__(self):
         return len(self.img_path)
 
+```
 
+```python 
+train_path=glob.glob('/content/drive/My Drive/Colab/街景字符识别/data/train/*.png')
+train_path.sort() 
+train_json=json.load(open('/content/drive/My Drive/Colab/街景字符识别/data/train.json'))
+train_label=[train_json[x]['label'] for x in train_json]
+
+data = SVHNDataset(train_path, train_label,
+          transforms.Compose([
+              # 缩放到固定尺寸
+              transforms.Resize((64, 128)),
+
+              # 随机颜色变换
+              transforms.ColorJitter(0.2, 0.2, 0.2),
+
+              # 加入随机旋转
+              transforms.RandomRotation(5),
+
+            #   将图片转换为pytorch 的tesntor
+              transforms.ToTensor(),
+
+            #   对图像像素进行归一化
+              transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225])
+            ]))
+```
+
+单个数据样本格式为：
+
+```python
+data[0][0].shape
+```
+
+```
+torch.Size([3, 64, 128])
+```
+
+**torch.utils.data.DataLoader实现数据集加载**
+
+```python
 train_path = glob.glob('/content/drive/My Drive/Colab/街景字符识别/data/train/*.png')
 train_path.sort()
 train_json = json.load(
     open('/content/drive/My Drive/Colab/街景字符识别/data/train.json'))
 train_label = [train_json[x]['label'] for x in train_json]
 
-train_loader = torch.utils.data.DataLoader(SVHNDataset(train_path, train_label, transforms.Compose([
-    #   缩放到固定尺寸
-    transforms.Resize((64, 128)),
-    #   随机颜色变换
-    transforms.ColorJitter(0.3, 0.3, 0.2),
-    #   加入随机旋转
-    transforms.RandomRotation(5),
-    #   将图片转换为pytorch的tensor
-    transforms.ToTensor(),
-    #   对图像元素进行归一化
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-
-
-])),
-    batch_size=10,  # 每批样本个数
+train_loader = torch.utils.data.DataLoader(
+    SVHNDataset(
+        train_path,
+        train_label,
+        transforms.Compose([
+            #   缩放到固定尺寸
+            transforms.Resize((64, 128)),
+            #   随机颜色变换
+            transforms.ColorJitter(0.3, 0.3, 0.2),
+            #   加入随机旋转
+            transforms.RandomRotation(5),
+            #   将图片转换为pytorch的tensor
+            transforms.ToTensor(),
+            #   对图像元素进行归一化
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ])),
+    batch_size=40,  # 每批样本个数
     shuffle=False,  # 是否打乱顺序
     num_workers=10,  # 读取的线程个数
 )
-
 ```
+
+注:DataLoader返回的是一个可迭代对象，我们可以使用迭代器分次获取数据
 
 在加入DataLoder后，数据按照批次获取，每批次调用Dataset读取单个样本进行拼接。此时data的格式为
 
 ```
-torch.Size([10, 3, 64, 128]), torch.Size([10, 6])
+torch.Size([40, 3, 64, 128]), torch.Size([10, 6])
 ```
 
 前者为图像文件，为batchsize * chanel * height * width次序；后者为字符标签
+
+## 参考
+
+[https://github.com/datawhalechina/team-learning/blob/master/03%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%AE%9E%E8%B7%B5%EF%BC%88%E8%A1%97%E6%99%AF%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E8%AF%86%E5%88%AB%EF%BC%89/Datawhale%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8CV%20-%20Task%2002%20%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%89%A9%E5%A2%9E.md](https://github.com/datawhalechina/team-learning/blob/master/03 计算机视觉/计算机视觉实践（街景字符编码识别）/Datawhale 零基础入门CV - Task 02 数据读取与数据扩增.md)
 
