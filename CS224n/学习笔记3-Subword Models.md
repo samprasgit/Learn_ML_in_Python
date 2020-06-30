@@ -18,3 +18,16 @@ $$
 
 ### n-gram语言模型
 
+在N-Gram语言模型中， count 可以用来表示单词出现的频率，这个模型与条件概率密切相关，其中，
+$$
+\begin{aligned}
+p\left(w_{2} \mid w_{1}\right) &=\frac{\operatorname{count}\left(w_{1}, w_{2}\right)}{\operatorname{count}\left(w_{1}\right)} \\
+p\left(w_{3} \mid w_{1}, w_{2}\right) &=\frac{\operatorname{count}\left(w_{1}, w_{2}, w_{3}\right)}{\operatorname{count}\left(w_{1}, w_{2}\right)}
+\end{aligned}
+$$
+将连续单词出现的频率作为概率，然后通过条件概率的形式就可以预测出下一个单词。
+
+比较难得是选取前面多少个单词。
+
+
+
