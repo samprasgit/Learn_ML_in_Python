@@ -79,5 +79,7 @@ $$
 
   对于不在词汇表中的单词，可以利用其 `character n-gram` 的`embedding` 来获取词向量。
 
+### GloVe Model
+
 
 
