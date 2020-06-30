@@ -31,3 +31,53 @@ $$
 
 
 
+### subword embedding
+
+论文 `《Enriching Word Vectors with Subword Information》` 中，作者提出通过增加字符级信息来训练词向量
+
+下图给出了该方法在维基百科上训练的词向量在相似度计算任务上的表现（由人工评估模型召回的结果）。`sisg-` 和 `sisg` 模型均采用了 `subword embedding`，区别是：对于未登录词，`sisg-` 采用零向量来填充，而 `sisg` 采用 `character n-gram embedding` 来填充。
+
+![img](http://www.huaxiaozhuan.com/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/imgs/word_representation/word2vec_char.png)
+
+单词拆分：每个单词表示为一组 `character n-gram` 字符（不考虑顺序），以单词 `where`、 `n=3` 为例：
+
+- 首先增加特殊的边界字符 `<` （单词的左边界）和 `>` （单词的右边界）。
+- 然后拆分出一组 `character n-gram` 字符：`<wh, whe,her,ere,re>` 。
+- 最后增加单词本身：`<where>`。
+
+为了尽可能得到多样性的 `character n-gram` 字符，作者抽取了所有 `3<= n <= 6` 的 `character n-gram` 。以单词 `mistake` 为例：
+
+```
+<mi,mis,ist,sta,tak,ake,ke>,   // n = 3
+<mis,mist,ista,stak,take,ake>, // n = 4
+<mist,mista,istak,stake,take>, // n = 5
+<mista,mistak,istake,stake>,   // n = 6
+<mistake>                      // 单词本身
+```
+
+注意：这里的 `take` 和 `<take>` 不同。前者是某个`character n-gram`，后者是一个单词。
+
+一旦拆分出单词，则：
+
+- 词典 扩充为包含所有单词和 `N-gram` 字符。
+- 网络输入包含单词本身以及该单词的所有 `character n-gram` ，网络输出仍然保持为单词本身。
+
+模型采用 `word2vec` ，训练得到每个`character n-gram embedding` 。最终单词的词向量是其所有 `character n-gram embedding`包括其本身 `embedding` 的和（或者均值）。
+
+如：单词 `where` 的词向量来自于下面`embedding` 之和：
+
+- 单词 `<where>` 本身的词向量。
+- 一组 `character n-gram` 字符 `<wh, whe,her,ere,re>` 的词向量。
+
+利用字符级信息训练词向量有两个优势：
+
+- 有利于低频词的训练。
+
+  低频词因为词频较低，所以训练不充分。但是低频词包含的 `character n-gram` 可能包含某些特殊含义并且得到了充分的训练，因此有助于提升低频词的词向量的表达能力。
+
+- 有利于获取 `OOV` 单词（未登录词：不在词汇表中的单词）的词向量。
+
+  对于不在词汇表中的单词，可以利用其 `character n-gram` 的`embedding` 来获取词向量。
+
+
+
