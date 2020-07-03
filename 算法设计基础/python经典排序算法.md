@@ -97,15 +97,15 @@
           n = len(arry)
           for i in range(n):
           # 有序标记，每一轮开始都是true ,用于判断元素间是否进行交换
-          isSorted = True
-          for j in range(n - j - 1):
-              if arry[j] > arry[j + 1]:
-                  arry[j], arry[j + 1] = arry[j + 1], arry[j]
-                  # 有交换行为设置为FALSE
-                  isSorted = False
-          # 无交换行为（isSorted=true）直接跳出本次循环
-          if isSorted:
-              break
+            isSorted = True
+            for j in range(n - j - 1):
+                if arry[j] > arry[j + 1]:
+                    arry[j], arry[j + 1] = arry[j + 1], arry[j]
+                    # 有交换行为设置为FALSE
+                    isSorted = False
+            # 无交换行为（isSorted=true）直接跳出本次循环
+            if isSorted:
+                break
           return arry 
   ```
 
@@ -138,7 +138,7 @@
                       min = j
               # i不是最小数时，将i和最小数进行交换
               if i != min:
-                  arry[i], arry[min] = arry[min], arry[j]
+                  arry[i], arry[min] = arry[min], arry[i]
   
       return arry
   ```
@@ -174,7 +174,7 @@
                   arr[pre_index + 1] = arr[pre_index]
                   # 往前选择下一个比较元素
                   pre_index -= 1
-            # 当比较元素小于当前元素，则将当前元素插入在 其后面
+            # 当比较元素小于当前元素，则将当前元素插入在其后面
               arr[pre_index + 1] = current
           return arr
   ```
