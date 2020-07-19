@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [1 集成学习方法](#1-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95)
+- [2 深度学习中的集成方法](#2-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E9%9B%86%E6%88%90%E6%96%B9%E6%B3%95)
+  - [2.1 Dropout](#21-dropout)
+  - [2.2 TTA](#22-tta)
+  - [2.3 Snapshot](#23-snapshot)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### 1 集成学习方法
 
 机器学习常见的集成方法有Satcking、Bagging、Boosting,同时这些集成学习方法与具体验证集划分联系紧密.

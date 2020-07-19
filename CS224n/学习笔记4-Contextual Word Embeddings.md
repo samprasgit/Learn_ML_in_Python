@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Contextual语言模型总结](#contextual%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93)
+- [1.CoVe](#1cove)
+  - [NMT(Nerual Machine Translation )](#nmtnerual-machine-translation-)
+  - [下游任务中使用CoVe](#%E4%B8%8B%E6%B8%B8%E4%BB%BB%E5%8A%A1%E4%B8%AD%E4%BD%BF%E7%94%A8cove)
+  - [CoVe的不足](#cove%E7%9A%84%E4%B8%8D%E8%B6%B3)
+- [2.ELMo](#2elmo)
+  - [bi-LSTM双向语言模型](#bi-lstm%E5%8F%8C%E5%90%91%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B)
+  - [ELMo表示](#elmo%E8%A1%A8%E7%A4%BA)
+- [参考：](#%E5%8F%82%E8%80%83)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ###  Contextual语言模型总结
 
 - CoVe

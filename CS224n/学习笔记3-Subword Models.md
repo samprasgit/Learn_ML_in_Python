@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [学习任务](#%E5%AD%A6%E4%B9%A0%E4%BB%BB%E5%8A%A1)
+- [语言模型](#%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B)
+- [n-gram语言模型](#n-gram%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B)
+- [subword embedding](#subword-embedding)
+- [GloVe Model](#glove-model)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### 学习任务
 
 - 回归Wordvec模型

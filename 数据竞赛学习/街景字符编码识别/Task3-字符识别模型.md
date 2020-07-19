@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [3.1 学习目标](#31-%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87)
+- [3.2 CNN介绍](#32-cnn%E4%BB%8B%E7%BB%8D)
+    - [3.2.1 卷积层](#321-%E5%8D%B7%E7%A7%AF%E5%B1%82)
+    - [3.2.2池化层](#322%E6%B1%A0%E5%8C%96%E5%B1%82)
+    - [3.2.3 全连接层](#323-%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82)
+- [3.3CNN发展](#33cnn%E5%8F%91%E5%B1%95)
+- [4.Pytorch构建CNN模型](#4pytorch%E6%9E%84%E5%BB%BAcnn%E6%A8%A1%E5%9E%8B)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## 3.1 学习目标
 
 1. 学习CNN基础和原理

@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [赛题理解](#%E8%B5%9B%E9%A2%98%E7%90%86%E8%A7%A3)
+  - [1.1街道字符识别](#11%E8%A1%97%E9%81%93%E5%AD%97%E7%AC%A6%E8%AF%86%E5%88%AB)
+  - [1.2赛题数据](#12%E8%B5%9B%E9%A2%98%E6%95%B0%E6%8D%AE)
+  - [1.3数据标签说明](#13%E6%95%B0%E6%8D%AE%E6%A0%87%E7%AD%BE%E8%AF%B4%E6%98%8E)
+  - [1.4评价指标](#14%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87)
+  - [1.5数据读取](#15%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96)
+  - [1.6解题思路](#16%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF)
+    - [难点：赛题给定的数据图片中不同图片中包含的字符数量不同，2,3,4...](#%E9%9A%BE%E7%82%B9%E8%B5%9B%E9%A2%98%E7%BB%99%E5%AE%9A%E7%9A%84%E6%95%B0%E6%8D%AE%E5%9B%BE%E7%89%87%E4%B8%AD%E4%B8%8D%E5%90%8C%E5%9B%BE%E7%89%87%E4%B8%AD%E5%8C%85%E5%90%AB%E7%9A%84%E5%AD%97%E7%AC%A6%E6%95%B0%E9%87%8F%E4%B8%8D%E5%90%8C234)
+    - [解决方法：](#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # 赛题理解
 
 - 赛题名称：零基础入门CV之街道字符识别             

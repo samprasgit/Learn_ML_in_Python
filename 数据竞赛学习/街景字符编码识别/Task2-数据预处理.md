@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [2.1图像读取](#21%E5%9B%BE%E5%83%8F%E8%AF%BB%E5%8F%96)
+- [2.2图像数据扩增方法(Data Augementation)](#22%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E6%89%A9%E5%A2%9E%E6%96%B9%E6%B3%95data-augementation)
+    - [为神魔进行图像数据扩增](#%E4%B8%BA%E7%A5%9E%E9%AD%94%E8%BF%9B%E8%A1%8C%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E6%89%A9%E5%A2%9E)
+    - [数据扩增方法：](#%E6%95%B0%E6%8D%AE%E6%89%A9%E5%A2%9E%E6%96%B9%E6%B3%95)
+    - [常用的数据扩增库](#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E6%89%A9%E5%A2%9E%E5%BA%93)
+- [2.3Torch读取数据](#23torch%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE)
+- [参考](#%E5%8F%82%E8%80%83)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## 2.1图像读取
 
 - ### Pillow

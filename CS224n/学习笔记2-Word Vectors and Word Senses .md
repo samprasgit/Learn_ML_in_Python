@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [GLoVe(Global Vectors for Word Representation)](#gloveglobal-vectors-for-word-representation)
+- [Co-occurrence Matrix](#co-occurrence-matrix)
+- [目标函数](#%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## GLoVe(Global Vectors for Word Representation)
 
 GloVe 模型包含一个训练在单词-单词的共同出现次数上的加权的最小二乘模型
