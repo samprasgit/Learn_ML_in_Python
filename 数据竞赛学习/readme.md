@@ -17,7 +17,7 @@
 
 ## 2.街景字符识别
 
-## 3.新闻文本分类
+## 3.[新闻文本分类]([https://github.com/samprasgit/Learn_ML_in_Python/tree/master/%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%AD%A6%E4%B9%A0/%E6%96%B0%E9%97%BB%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB](https://github.com/samprasgit/Learn_ML_in_Python/tree/master/数据竞赛学习/新闻文本分类))
 
  
 
