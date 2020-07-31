@@ -19,7 +19,7 @@ class Solution:
             if not node:
                 return True
 
-            val = ndoe.val
+            val = node.val
             if val <= lower or val >= upper:
                 return False
             if not helper(node.right, val, upper):
