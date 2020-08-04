@@ -180,9 +180,5 @@ if self.training:
 
 本章介绍了Bert的原理和使用，具体包括pretrain和finetune两部分。
 
-### 本章作业
+Bert调参的部分尚未完成，后续补上:sob:
 
-- 完成Bert Pretrain和Finetune的过程
-- 阅读Bert官方文档，找到相关参数进行调参
-
-Bert和Al bert 预训练模型
