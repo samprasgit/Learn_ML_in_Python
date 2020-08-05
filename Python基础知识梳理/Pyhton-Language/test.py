@@ -1,19 +1,17 @@
-import random
-a = int(random.randint(1, 100))
-print("猜测1-100的一个数字")
-i = 1
-while True:
-    x = input('第%d次猜测，请输入一个数字：' % i)
-    try:
-        if type(eval(x)) == int:
-            guessnum = int(x)
-            if guessnum < a:
-                print('小了！')
-            elif guessnum > a:
-                print("大了！")
-            else:
-                print("恭喜您猜到了，这个数是%d" % a)
-                break
-    except:
-        print("输入无效")
-    i += 1
+
+
+class Ticket:
+
+    def __init__(self, kid, adult, day):
+        self.kid = kid
+        self.adult = adult
+        self.day = day
+
+    def prices(self):
+        if self.day in range(6):
+            print(100 * self.adult + 50 * self.kid)
+        else:
+            print(1.2 * (100 * self.adult + 50 * self.kid))
+
+m = Ticket(1, 2, 1)
+m.prices()
