@@ -108,7 +108,6 @@ def divide_conquer(problem, paraml, param2,...):
         return ans
     ```
   
-    
 - 方法2
   - 首先将数组分成前后两半 A1 和 A2，分别计算 A1 和 A2 的逆序对个数 K1 和 K2
 
@@ -335,7 +334,7 @@ def divide_conquer(problem, paraml, param2,...):
   ```
   
 
-#### 两个排序数组的中位数
+#### [4.两个排序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/)
 
 - 题目描述
 
@@ -509,6 +508,8 @@ def divide_conquer(problem, paraml, param2,...):
 
 
 将k个排序好的链表合并成新的有序链表
+
+#### [241. 为运算表达式设计优先级](https://leetcode-cn.com/problems/different-ways-to-add-parentheses/)
 
 ### 参考资料
 
