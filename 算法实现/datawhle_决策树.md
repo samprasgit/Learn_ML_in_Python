@@ -21,13 +21,19 @@
 
 ## 思考:thinking:
 
+:warning:需要特别熟悉各自原理与区别联系以及工程实现
+
 ### 1.决策树ID3，C4. 5，CART的区别
 
-### 2.掌握Bagging 和Boosting
+### 2.Bagging 和Boosting
 
-### 3.掌握随机森林，XGBoost原理
+### 3. 随机森林，XGBoost原理
 
 ### 4.随机森林，XGB，LGB的各自区别（面试常问）
+
+[随机森林RF、XGBoost、GBDT和LightGBM的原理和区别](https://www.cnblogs.com/hugechuanqi/p/10554156.html)
+
+
 
 ### 5.GBDT和XGB的区别
 
@@ -49,4 +55,10 @@
 
 - 可并行的近似直方图算法。树节点在进行分裂时，我们需要计算每个特征的每个分割点对应的增益，即用贪心法枚举所有可能的分割点。当数据无法一次载入内存或者在分布式情况下，贪心算法效率就会变得很低，所以xgboost还提出了一种可并行的近似直方图算法，用于高效地生成候选的分割点。
 
- 
+##  参考
+
+https://www.cnblogs.com/hugechuanqi/p/10554156.html
+
+[大战三回合：XGBoost、LightGBM和Catboost一决高低](https://mp.weixin.qq.com/s/h6MYH8easbl-FKBGD7HOZg)
+
+[终于有人把XGBoost 和 LightGBM 讲明白了，项目中最主流的集成算法](https://mp.weixin.qq.com/s/LoX987dypDg8jbeTJMpEPQ)
