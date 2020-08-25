@@ -1,3 +1,26 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [分治](#%E5%88%86%E6%B2%BB)
+  - [引文](#%E5%BC%95%E6%96%87)
+  - [主要思想](#%E4%B8%BB%E8%A6%81%E6%80%9D%E6%83%B3)
+  - [分治算法的步骤](#%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95%E7%9A%84%E6%AD%A5%E9%AA%A4)
+  - [分治法适用的情况](#%E5%88%86%E6%B2%BB%E6%B3%95%E9%80%82%E7%94%A8%E7%9A%84%E6%83%85%E5%86%B5)
+  - [伪代码](#%E4%BC%AA%E4%BB%A3%E7%A0%81)
+  - [复杂度分析](#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90)
+  - [举个栗子](#%E4%B8%BE%E4%B8%AA%E6%A0%97%E5%AD%90)
+    - [数组逆序对计算](#%E6%95%B0%E7%BB%84%E9%80%86%E5%BA%8F%E5%AF%B9%E8%AE%A1%E7%AE%97)
+  - [算法应用](#%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8)
+    - [169. 多数元素](#169-%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0)
+    - [4.两个排序数组的中位数](#4%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0)
+    - [53. 最大子序和](#53-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C)
+    - [50. Pow(x, n)](#50-powx-n)
+    - [241. 为运算表达式设计优先级](#241-%E4%B8%BA%E8%BF%90%E7%AE%97%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%85%88%E7%BA%A7)
+  - [参考资料](#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ##  分治
 
 ### 引文
