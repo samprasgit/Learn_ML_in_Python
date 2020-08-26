@@ -1,3 +1,7 @@
+
+
+[SVM算法Demo实战](https://github.com/samprasgit/Learn_ML_in_Python/blob/master/算法实现/datawhale_SVM.ipynb)
+
 ## 思考题
 
 1.什么是支持向量
