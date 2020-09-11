@@ -305,7 +305,7 @@ def findLengthOfLCIS(self, nums: List[int]) -> int:
 ```
 
 - **第一步：确定动态规划状态**
-  与上面两题不同的是，这个题目必须用**二维**的dp数组来记录状态，主要原因就是子串有回文的限制。用两个指针来记录子串的位置可以很好的实现子串的回文要求，又因为最后结果需要返回的是子串，这里不同于之前题目的用dp保存长度，我们必须找到具体哪个部分符合回文子串的要求。这里插一句，其实也有求回文子串长度的题目[Leetcode516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/),如果有兴趣可以看一下。这里我们定义`dp[i][j]`表示子串s从i到j是否为回文子串。
+  与上面两题不同的是，这个题目必须用**二维**的dp数组来记录状态，主要原因就是子串有回文的限制。**用两个指针来记录子串的位置可以很好的实现子串的回文要求**，又因为最后结果需要返回的是子串，这里不同于之前题目的用dp保存长度，我们必须找到具体哪个部分符合回文子串的要求。这里插一句，其实也有求回文子串长度的题目[Leetcode516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/),如果有兴趣可以看一下。这里我们定义`dp[i][j]`表示子串s从i到j是否为回文子串。
 
 - **第二步：写出状态转移方程**
   首先我们需要知道符合回文的条件：
@@ -342,7 +342,7 @@ def findLengthOfLCIS(self, nums: List[int]) -> int:
   ```
 
 - **第五步：考虑对时间，空间复杂度的优化**
-  对于这个问题，时间和空间都可以进一步优化，对于空间方面的优化：这里采用一种叫中心扩散的方法来进行，而对于时间方面的优化，则是用了Manacher‘s Algorithm（马拉车算法）来进行优化。具体的实现可以参考[动态规划、Manacher 算法](https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-dong-tai-gui-hua-by-liweiwei1419/)
+  对于这个问题，时间和空间都可以进一步优化，对于空间方面的优化：这里采用一种叫**中心扩散**的方法来进行，而对于时间方面的优化，则是用了Manacher‘s Algorithm（马拉车算法）来进行优化。具体的实现可以参考[动态规划、Manacher 算法](https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-dong-tai-gui-hua-by-liweiwei1419/)
 
   这里给出比较容易理解的经典方法的代码：
 
