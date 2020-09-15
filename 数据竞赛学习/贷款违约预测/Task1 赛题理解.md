@@ -1,3 +1,25 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Task1 赛题理解](#task1-%E8%B5%9B%E9%A2%98%E7%90%86%E8%A7%A3)
+  - [1.1 学习目标](#11-%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87)
+  - [1.2 了解赛题](#12-%E4%BA%86%E8%A7%A3%E8%B5%9B%E9%A2%98)
+    - [1.2.1 赛题概况](#121-%E8%B5%9B%E9%A2%98%E6%A6%82%E5%86%B5)
+    - [1.2.2 数据概况](#122-%E6%95%B0%E6%8D%AE%E6%A6%82%E5%86%B5)
+    - [1.2.3 预测指标](#123-%E9%A2%84%E6%B5%8B%E6%8C%87%E6%A0%87)
+      - [分类算法常见的评估指标如下：](#%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87%E5%A6%82%E4%B8%8B)
+      - [对于金融风控预测类常见的评估指标如下:](#%E5%AF%B9%E4%BA%8E%E9%87%91%E8%9E%8D%E9%A3%8E%E6%8E%A7%E9%A2%84%E6%B5%8B%E7%B1%BB%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87%E5%A6%82%E4%B8%8B)
+      - [风控模型稳定性指标：](#%E9%A3%8E%E6%8E%A7%E6%A8%A1%E5%9E%8B%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%8C%87%E6%A0%87)
+    - [1.2.4. 赛题流程](#124-%E8%B5%9B%E9%A2%98%E6%B5%81%E7%A8%8B)
+  - [1.3 代码示例](#13-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B)
+    - [1.3.1 数据读取pandas](#131-%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96pandas)
+    - [1.3.2 分类指标评价计算示例](#132-%E5%88%86%E7%B1%BB%E6%8C%87%E6%A0%87%E8%AF%84%E4%BB%B7%E8%AE%A1%E7%AE%97%E7%A4%BA%E4%BE%8B)
+  - [1.4 经验总结](#14-%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93)
+  - [1.5 拓展知识——评分卡](#15-%E6%8B%93%E5%B1%95%E7%9F%A5%E8%AF%86%E8%AF%84%E5%88%86%E5%8D%A1)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 # Task1 赛题理解
 

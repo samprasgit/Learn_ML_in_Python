@@ -1,3 +1,34 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Task4 建模与调参](#task4-%E5%BB%BA%E6%A8%A1%E4%B8%8E%E8%B0%83%E5%8F%82)
+  - [4.1 学习目标](#41-%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87)
+  - [4.2 内容介绍](#42-%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D)
+  - [4.3 模型相关原理介绍](#43-%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86%E4%BB%8B%E7%BB%8D)
+    - [4.3.1 逻辑回归模型](#431-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B)
+    - [4.3.2 决策树模型](#432-%E5%86%B3%E7%AD%96%E6%A0%91%E6%A8%A1%E5%9E%8B)
+    - [4.3.3 GBDT模型](#433-gbdt%E6%A8%A1%E5%9E%8B)
+    - [4.3.4 XGBoost模型](#434-xgboost%E6%A8%A1%E5%9E%8B)
+    - [4.3.5 LightGBM模型](#435-lightgbm%E6%A8%A1%E5%9E%8B)
+    - [4.3.6 Catboost模型](#436-catboost%E6%A8%A1%E5%9E%8B)
+    - [4.3.7 时间序列模型(选学)](#437-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B%E9%80%89%E5%AD%A6)
+    - [4.3.8 推荐教材：](#438-%E6%8E%A8%E8%8D%90%E6%95%99%E6%9D%90)
+  - [4.4 模型对比与性能评估](#44-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94%E4%B8%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0)
+    - [4.4.1 逻辑回归](#441-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92)
+    - [4.4.2 决策树模型](#442-%E5%86%B3%E7%AD%96%E6%A0%91%E6%A8%A1%E5%9E%8B)
+    - [4.4.3 集成模型集成方法（ensemble method）](#443-%E9%9B%86%E6%88%90%E6%A8%A1%E5%9E%8B%E9%9B%86%E6%88%90%E6%96%B9%E6%B3%95ensemble-method)
+    - [4.4.4 模型评估方法](#444-%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95)
+    - [4.4.5 模型评价标准](#445-%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%A0%87%E5%87%86)
+  - [4.5 代码示例](#45-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B)
+    - [4.5.1 导入相关关和相关设置](#451-%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E5%85%B3%E5%92%8C%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE)
+    - [4.5.2 读取数据](#452-%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE)
+    - [4.5.3 简单建模](#453-%E7%AE%80%E5%8D%95%E5%BB%BA%E6%A8%A1)
+    - [4.5.4 模型调参](#454-%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82)
+  - [4.6 经验总结](#46-%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ﻿
 # Task4 建模与调参
 

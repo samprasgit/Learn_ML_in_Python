@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [新闻文本分类](#%E6%96%B0%E9%97%BB%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB)
+- [赛题背景](#%E8%B5%9B%E9%A2%98%E8%83%8C%E6%99%AF)
+- [赛题数据](#%E8%B5%9B%E9%A2%98%E6%95%B0%E6%8D%AE)
+- [数据标签](#%E6%95%B0%E6%8D%AE%E6%A0%87%E7%AD%BE)
+  - [评测指标](#%E8%AF%84%E6%B5%8B%E6%8C%87%E6%A0%87)
+  - [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## [新闻文本分类](https://tianchi.aliyun.com/competition/entrance/531810/introduction?spm=5176.12281973.1005.1.3dd52448MrT3Lo)
 
 ## 赛题背景

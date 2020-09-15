@@ -1,3 +1,33 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Task3 特征工程](#task3-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B)
+  - [3.1 学习目标](#31-%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87)
+  - [3.2 内容介绍](#32-%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D)
+  - [3.3 代码示例](#33-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B)
+    - [3.3.1 导入包并读取数据](#331-%E5%AF%BC%E5%85%A5%E5%8C%85%E5%B9%B6%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE)
+    - [3.3.2特征预处理](#332%E7%89%B9%E5%BE%81%E9%A2%84%E5%A4%84%E7%90%86)
+      - [缺失值填充](#%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A1%AB%E5%85%85)
+      - [时间格式处理](#%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%A4%84%E7%90%86)
+      - [对象类型特征转换到数值](#%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E7%89%B9%E5%BE%81%E8%BD%AC%E6%8D%A2%E5%88%B0%E6%95%B0%E5%80%BC)
+      - [类别特征处理](#%E7%B1%BB%E5%88%AB%E7%89%B9%E5%BE%81%E5%A4%84%E7%90%86)
+    - [3.3.3  异常值处理](#333--%E5%BC%82%E5%B8%B8%E5%80%BC%E5%A4%84%E7%90%86)
+      - [检测异常的方法一：均方差](#%E6%A3%80%E6%B5%8B%E5%BC%82%E5%B8%B8%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%80%E5%9D%87%E6%96%B9%E5%B7%AE)
+      - [检测异常的方法二：箱型图](#%E6%A3%80%E6%B5%8B%E5%BC%82%E5%B8%B8%E7%9A%84%E6%96%B9%E6%B3%95%E4%BA%8C%E7%AE%B1%E5%9E%8B%E5%9B%BE)
+    - [3.3.4 数据分桶](#334-%E6%95%B0%E6%8D%AE%E5%88%86%E6%A1%B6)
+    - [3.3.5 特征交互](#335-%E7%89%B9%E5%BE%81%E4%BA%A4%E4%BA%92)
+    - [3.3.6 特征编码](#336-%E7%89%B9%E5%BE%81%E7%BC%96%E7%A0%81)
+      - [labelEncode 直接放入树模型中](#labelencode-%E7%9B%B4%E6%8E%A5%E6%94%BE%E5%85%A5%E6%A0%91%E6%A8%A1%E5%9E%8B%E4%B8%AD)
+      - [逻辑回归等模型要单独增加的特征工程](#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AD%89%E6%A8%A1%E5%9E%8B%E8%A6%81%E5%8D%95%E7%8B%AC%E5%A2%9E%E5%8A%A0%E7%9A%84%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B)
+    - [3.3.7 特征选择](#337-%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9)
+      - [Filter](#filter)
+      - [Wrapper （Recursive feature elimination，RFE）](#wrapper-recursive-feature-eliminationrfe)
+      - [Embedded](#embedded)
+  - [3.4 总结](#34-%E6%80%BB%E7%BB%93)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ﻿
 # Task3 特征工程
 

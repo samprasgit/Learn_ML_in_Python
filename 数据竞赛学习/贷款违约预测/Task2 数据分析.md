@@ -1,3 +1,26 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Task2 数据分析](#task2-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90)
+  - [2.1 学习目标](#21-%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87)
+  - [2.2 内容介绍](#22-%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D)
+  - [2.3 代码示例](#23-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B)
+    - [2.3.1 导入数据分析及可视化过程需要的库](#231-%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BF%87%E7%A8%8B%E9%9C%80%E8%A6%81%E7%9A%84%E5%BA%93)
+    - [2.3.2 读取文件](#232-%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6)
+    - [2.3.3 总体了解](#233-%E6%80%BB%E4%BD%93%E4%BA%86%E8%A7%A3)
+    - [2.3.4 查看数据集中特征缺失值，唯一值等](#234-%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%89%B9%E5%BE%81%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%94%AF%E4%B8%80%E5%80%BC%E7%AD%89)
+    - [2.3.5 查看特征的数值类型有哪些，对象类型有哪些](#235-%E6%9F%A5%E7%9C%8B%E7%89%B9%E5%BE%81%E7%9A%84%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B)
+    - [2.3.6 变量分布可视化](#236-%E5%8F%98%E9%87%8F%E5%88%86%E5%B8%83%E5%8F%AF%E8%A7%86%E5%8C%96)
+      - [单一变量分布可视化](#%E5%8D%95%E4%B8%80%E5%8F%98%E9%87%8F%E5%88%86%E5%B8%83%E5%8F%AF%E8%A7%86%E5%8C%96)
+      - [根绝y值不同可视化x某个特征的分布](#%E6%A0%B9%E7%BB%9Dy%E5%80%BC%E4%B8%8D%E5%90%8C%E5%8F%AF%E8%A7%86%E5%8C%96x%E6%9F%90%E4%B8%AA%E7%89%B9%E5%BE%81%E7%9A%84%E5%88%86%E5%B8%83)
+    - [2.3.7 时间格式数据处理及查看](#237-%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%8F%8A%E6%9F%A5%E7%9C%8B)
+    - [2.3.8 掌握透视图可以让我们更好的了解数据](#238-%E6%8E%8C%E6%8F%A1%E9%80%8F%E8%A7%86%E5%9B%BE%E5%8F%AF%E4%BB%A5%E8%AE%A9%E6%88%91%E4%BB%AC%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BA%86%E8%A7%A3%E6%95%B0%E6%8D%AE)
+    - [2.3.9 用pandas_profiling生成数据报告](#239-%E7%94%A8pandas_profiling%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%91%8A)
+  - [2.4 总结](#24-%E6%80%BB%E7%BB%93)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ﻿
 # Task2 数据分析
 
