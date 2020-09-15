@@ -208,7 +208,29 @@
 
 #### 题目描述
 
+给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+
+```
+示例:
+
+输入: [-2,1,-3,4,-1,2,1,-5,4]
+输出: 6
+解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
+
+
+```
+
 #### 解题思路
+
+```python
+def maxSubArray(nums):
+    for i in range(1, len(nums)):
+        nums[i] = max(nums[i - 1] + nums[i], nums[i])
+
+    return max(nums)
+```
+
+
 
 ### [Leetcode 674.最长连续递增序列](https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/)
 
@@ -283,7 +305,7 @@ def findLengthOfLCIS(self, nums: List[int]) -> int:
 ```
 
 - **第一步：确定动态规划状态**
-  与上面两题不同的是，这个题目必须用**二维**的dp数组来记录状态，主要原因就是子串有回文的限制。用两个指针来记录子串的位置可以很好的实现子串的回文要求，又因为最后结果需要返回的是子串，这里不同于之前题目的用dp保存长度，我们必须找到具体哪个部分符合回文子串的要求。这里插一句，其实也有求回文子串长度的题目[Leetcode516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/),如果有兴趣可以看一下。这里我们定义`dp[i][j]`表示子串s从i到j是否为回文子串。
+  与上面两题不同的是，这个题目必须用**二维**的dp数组来记录状态，主要原因就是子串有回文的限制。**用两个指针来记录子串的位置可以很好的实现子串的回文要求**，又因为最后结果需要返回的是子串，这里不同于之前题目的用dp保存长度，我们必须找到具体哪个部分符合回文子串的要求。这里插一句，其实也有求回文子串长度的题目[Leetcode516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/),如果有兴趣可以看一下。这里我们定义`dp[i][j]`表示子串s从i到j是否为回文子串。
 
 - **第二步：写出状态转移方程**
   首先我们需要知道符合回文的条件：
@@ -320,7 +342,7 @@ def findLengthOfLCIS(self, nums: List[int]) -> int:
   ```
 
 - **第五步：考虑对时间，空间复杂度的优化**
-  对于这个问题，时间和空间都可以进一步优化，对于空间方面的优化：这里采用一种叫中心扩散的方法来进行，而对于时间方面的优化，则是用了Manacher‘s Algorithm（马拉车算法）来进行优化。具体的实现可以参考[动态规划、Manacher 算法](https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-dong-tai-gui-hua-by-liweiwei1419/)
+  对于这个问题，时间和空间都可以进一步优化，对于空间方面的优化：这里采用一种叫**中心扩散**的方法来进行，而对于时间方面的优化，则是用了Manacher‘s Algorithm（马拉车算法）来进行优化。具体的实现可以参考[动态规划、Manacher 算法](https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-dong-tai-gui-hua-by-liweiwei1419/)
 
   这里给出比较容易理解的经典方法的代码：
 
@@ -649,6 +671,42 @@ def rob(self, nums: List[int]) -> int:
             return dp[-1]
         return max(helper(nums[1:]),helper(nums[:-1]))
 ```
+
+### [LeetCode337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/)
+
+题目描述
+
+在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为“根”。 除了“根”之外，每栋房子有且只有一个“父“房子与之相连。一番侦察之后，聪明的小偷意识到“这个地方的所有房屋的排列类似于一棵二叉树”。 如果两个直接相连的房子在同一天晚上被打劫，房屋将自动报警。
+
+计算在不触动警报的情况下，小偷一晚能够盗取的最高金额。
+
+```
+输入: [3,2,3,null,3,null,1]
+
+     3
+    / \
+   2   3
+    \   \ 
+     3   1
+
+输出: 7 
+解释: 小偷一晚能够盗取的最高金额 = 3 + 3 + 1 = 7.
+```
+
+```
+输入: [3,4,5,1,3,null,1]
+
+     3
+    / \
+   4   5
+  / \   \ 
+ 1   3   1
+
+输出: 9
+解释: 小偷一晚能够盗取的最高金额 = 4 + 5 = 9.
+```
+
+
 
 ## 总结
 
