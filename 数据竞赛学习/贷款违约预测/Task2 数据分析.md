@@ -21,7 +21,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-﻿
+
 # Task2 数据分析
 
 此部分为零基础入门金融风控的 Task2 数据分析部分，带你来了解数据，熟悉数据，为后续的特征工程做准备，欢迎大家后续多多交流。
@@ -42,7 +42,7 @@
 - 学习如何对数据集整体概况进行分析，包括数据集的基本情况（缺失值，异常值）
 - 学习了解变量间的相互关系、变量与预测值之间的存在关系
 - 完成相应学习打卡任务 
- 
+
 
 ## 2.2 内容介绍
 
@@ -81,7 +81,7 @@ warnings.filterwarnings('ignore')
 
     /Users/exudingtao/opt/anaconda3/lib/python3.7/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
       import pandas.util.testing as tm
-    
+
 
 以上库都是pip install 安装就好，如果本机有python2,python3两个python环境傻傻分不清哪个的话,可以pip3 install 。或者直接在notebook中'!pip3 install ****'安装。
 
@@ -274,7 +274,7 @@ data_train.info()
      46  n14                 759730 non-null  float64
     dtypes: float64(33), int64(9), object(5)
     memory usage: 286.9+ MB
-    
+
 
 总体粗略的查看数据集各个特征的一些基本统计量
 
@@ -295,7 +295,7 @@ data_train.describe()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -544,7 +544,7 @@ data_train.head(3).append(data_train.tail(3))
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -738,7 +738,7 @@ print(f'There are {data_train.isnull().any().sum()} columns in train dataset wit
 ```
 
     There are 22 columns in train dataset with missing values.
-    
+
 
 上面得到训练集有22列特征有缺失值，进一步查看缺失特征中缺失率大于50%的特征
 
@@ -764,6 +764,40 @@ fea_null_moreThanHalf
 
 
 具体的查看缺失特征及缺失率
+
+```python
+# 统计具体的缺失率
+total = data_train.isnull().sum().sort_values(ascending=False)
+percent = (data_train.isnull().sum() /
+           data_train.isnull().count()).sort_values(ascending=False)
+missing_data = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])
+missing_data.head(20)
+```
+
+|                    | Total | Percent  |
+| :----------------- | ----: | -------- |
+| n11                | 69752 | 0.087190 |
+| employmentLength   | 46799 | 0.058499 |
+| n8                 | 40271 | 0.050339 |
+| n14                | 40270 | 0.050338 |
+| n5                 | 40270 | 0.050338 |
+| n0                 | 40270 | 0.050338 |
+| n1                 | 40270 | 0.050338 |
+| n2                 | 40270 | 0.050338 |
+| n2.1               | 40270 | 0.050338 |
+| n6                 | 40270 | 0.050338 |
+| n7                 | 40270 | 0.050338 |
+| n9                 | 40270 | 0.050338 |
+| n12                | 40270 | 0.050338 |
+| n13                | 40270 | 0.050338 |
+| n4                 | 33239 | 0.041549 |
+| n10                | 33239 | 0.041549 |
+| revolUtil          |   531 | 0.000664 |
+| pubRecBankruptcies |   405 | 0.000506 |
+| dti                |   239 | 0.000299 |
+| title              |     1 | 0.000001 |
+
+
 
 
 ```python
@@ -831,7 +865,7 @@ print(f'There are {len(one_value_fea_test)} columns in test dataset with one uni
 
     There are 1 columns in train dataset with one unique value.
     There are 1 columns in test dataset with one unique value.
-    
+
 
 总结：
 
@@ -897,7 +931,7 @@ numerical_fea
      'n11',
      'n12',
      'n13',
-     'n14']
+     'n14'] 
 
 
 
@@ -942,7 +976,7 @@ data_train.grade
 
 
 ```python
-#过滤数值型类别特征
+# 过滤数值型类别特征
 def get_numerical_serial_fea(data,feas):
     numerical_serial_fea = []
     numerical_noserial_fea = []
@@ -958,7 +992,7 @@ numerical_serial_fea,numerical_noserial_fea = get_numerical_serial_fea(data_trai
 
 
 ```python
-numerical_serial_fea
+numerical_serial_fea,len(numerical_serial_fea)
 ```
 
 
@@ -996,13 +1030,13 @@ numerical_serial_fea
      'n9',
      'n10',
      'n13',
-     'n14']
+     'n14']   33
 
 
 
 
 ```python
-numerical_noserial_fea
+numerical_noserial_fea,len(numerical_noserial_fea)
 ```
 
 
@@ -1016,7 +1050,7 @@ numerical_noserial_fea
      'applicationType',
      'policyCode',
      'n11',
-     'n12']
+     'n12']    9
 
 
 
@@ -1148,11 +1182,16 @@ data_train['n12'].value_counts()#离散型变量，相差悬殊，用不用再�
 
 
 ```python
-#每个数字特征得分布可视化
+# 每个数字特征的分布可视化
 f = pd.melt(data_train, value_vars=numerical_serial_fea)
 g = sns.FacetGrid(f, col="variable",  col_wrap=2, sharex=False, sharey=False)
 g = g.map(sns.distplot, "value")
 ```
+
+
+
+
+
 
 
 ![output_63_0.png](https://img-blog.csdnimg.cn/20200905092403482.png)
@@ -1526,11 +1565,11 @@ pivot
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead tr th {
         text-align: left;
     }
-
+    
     .dataframe thead tr:last-of-type th {
         text-align: right;
     }
