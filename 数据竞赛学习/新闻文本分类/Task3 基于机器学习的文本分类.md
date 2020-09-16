@@ -1,3 +1,25 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Task3 基于机器学习的文本分类](#task3-%E5%9F%BA%E4%BA%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB)
+  - [基于机器学习的文本分类](#%E5%9F%BA%E4%BA%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB)
+    - [学习目标](#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87)
+    - [机器学习模型](#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B)
+    - [文本表示方法 Part1](#%E6%96%87%E6%9C%AC%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95-part1)
+      - [One-hot](#one-hot)
+      - [Bag of Words](#bag-of-words)
+      - [N-gram](#n-gram)
+      - [TF-IDF](#tf-idf)
+    - [基于机器学习的文本分类](#%E5%9F%BA%E4%BA%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB-1)
+      - [Count Vectors + RidgeClassifier](#count-vectors--ridgeclassifier)
+      - [TF-IDF +  RidgeClassifier](#tf-idf---ridgeclassifier)
+    - [本章小结](#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93)
+    - [本章作业](#%E6%9C%AC%E7%AB%A0%E4%BD%9C%E4%B8%9A)
+    - [参考](#%E5%8F%82%E8%80%83)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Task3 基于机器学习的文本分类
 
 在上一章节，我们对赛题的数据进行了读取，并在末尾给出了两个小作业。如果你顺利完成了作业，那么你基本上对`Python`也比较熟悉了。在本章我们将使用传统机器学习算法来完成新闻分类的过程，将会结束到赛题的核心知识点。

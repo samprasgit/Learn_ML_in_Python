@@ -1,3 +1,26 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Task5 基于深度学习的文本分类2](#task5-%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB2)
+  - [基于深度学习的文本分类](#%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB)
+  - [学习目标](#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87)
+  - [文本表示方法](#%E6%96%87%E6%9C%AC%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95)
+    - [离散表示存在的问题：](#%E7%A6%BB%E6%95%A3%E8%A1%A8%E7%A4%BA%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98)
+    - [分布式表示：](#%E5%88%86%E5%B8%83%E5%BC%8F%E8%A1%A8%E7%A4%BA)
+      - [词嵌入](#%E8%AF%8D%E5%B5%8C%E5%85%A5)
+      - [1. NNLM](#1-nnlm)
+      - [2.Word2Vec](#2word2vec)
+      - [TextCNN](#textcnn)
+      - [TextRNN](#textrnn)
+    - [基于TextCNN、TextRNN的文本表示](#%E5%9F%BA%E4%BA%8Etextcnntextrnn%E7%9A%84%E6%96%87%E6%9C%AC%E8%A1%A8%E7%A4%BA)
+      - [TextCNN](#textcnn-1)
+      - [TextRNN](#textrnn-1)
+    - [使用HAN用于文本分类](#%E4%BD%BF%E7%94%A8han%E7%94%A8%E4%BA%8E%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB)
+    - [本章小结](#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Task5 基于深度学习的文本分类2
 
 ## 基于深度学习的文本分类

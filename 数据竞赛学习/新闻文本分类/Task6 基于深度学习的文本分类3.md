@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Task6 基于深度学习的文本分类3](#task6-%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB3)
+  - [基于深度学习的文本分类](#%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB)
+    - [学习目标](#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87)
+    - [文本表示方法Part4](#%E6%96%87%E6%9C%AC%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95part4)
+      - [Transformer原理](#transformer%E5%8E%9F%E7%90%86)
+      - [基于预训练语言模型的词表示](#%E5%9F%BA%E4%BA%8E%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%8D%E8%A1%A8%E7%A4%BA)
+    - [基于Bert的文本分类](#%E5%9F%BA%E4%BA%8Ebert%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB)
+      - [Bert Pretrain](#bert-pretrain)
+      - [Bert Finetune](#bert-finetune)
+    - [本章小结](#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Task6 基于深度学习的文本分类3
 
 ## 基于深度学习的文本分类

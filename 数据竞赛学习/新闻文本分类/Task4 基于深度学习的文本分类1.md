@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Task4 基于深度学习的文本分类1](#task4-%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB1)
+  - [基于深度学习的文本分类](#%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB)
+    - [学习目标](#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87)
+    - [文本表示方法 Part2](#%E6%96%87%E6%9C%AC%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95-part2)
+      - [现有文本表示方法的缺陷](#%E7%8E%B0%E6%9C%89%E6%96%87%E6%9C%AC%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95%E7%9A%84%E7%BC%BA%E9%99%B7)
+      - [FastText](#fasttext)
+    - [基于FastText的文本分类](#%E5%9F%BA%E4%BA%8Efasttext%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB)
+    - [如何使用验证集调参](#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E9%AA%8C%E8%AF%81%E9%9B%86%E8%B0%83%E5%8F%82)
+    - [本章小结](#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93)
+    - [本章作业](#%E6%9C%AC%E7%AB%A0%E4%BD%9C%E4%B8%9A)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Task4 基于深度学习的文本分类1
 
 ## 基于深度学习的文本分类
