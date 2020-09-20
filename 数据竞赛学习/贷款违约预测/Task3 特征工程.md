@@ -28,7 +28,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-﻿
+
 # Task3 特征工程
 
 此部分为零基础入门金融风控的 Task3 特征工程部分，带你来了解各种特征工程以及分析方法，欢迎大家后续多多交流。
@@ -133,6 +133,8 @@ numerical_fea.remove(label)
 - 纵向用缺失值下面的值替换缺失值,且设置最多只填充两个连续的缺失值
 
     data_train = data_train.fillna(axis=0,method='bfill',limit=2)
+    
+- 算法填充缺失值：KNN、 RF 
 
 
 ```python
@@ -192,7 +194,37 @@ data_train.isnull().sum()
     n14                   40270
     dtype: int64
 
+```python
+# 统计具体的缺失率
+total = data_train.isnull().sum().sort_values(ascending=False)
+percent = (data_train.isnull().sum() /
+           data_train.isnull().count()).sort_values(ascending=False)
+missing_data = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])
+missing_data.head(20)
+```
 
+|                    | Total |  Pecent  |
+| :----------------- | :---: | :------: |
+| n11                | 69752 | 0.087190 |
+| employmentLength   | 46799 | 0.058499 |
+| n8                 | 40271 | 0.050339 |
+| n14                | 40270 | 0.050338 |
+| n5                 | 40270 | 0.050338 |
+| n0                 | 40270 | 0.050338 |
+| n1                 | 40270 | 0.050338 |
+| n2                 | 40270 | 0.050338 |
+| n3                 | 40270 | 0.050338 |
+| n6                 | 40270 | 0.050338 |
+| n7                 | 40270 | 0.050338 |
+| n9                 | 40270 | 0.050338 |
+| n12                | 40270 | 0.050338 |
+| n13                | 40270 | 0.050338 |
+| n4                 | 33239 | 0.041549 |
+| n10                | 33239 | 0.041549 |
+| revolUtil          |  531  | 0.000664 |
+| pubRecBankruptcies |  405  | 0.000506 |
+| dti                |  239  | 0.000299 |
+| title              |   1   | 0.000001 |
 
 
 ```python
@@ -402,7 +434,7 @@ for f in cate_features:
     initialListStatus 类型数： 2
     title 类型数： 12058
     policyCode 类型数： 1
-    
+
 
 像等级这种类别特征，是有优先级的可以labelencode或者自映射
 
@@ -765,7 +797,7 @@ for fea in numerical_fea:
     正常值    156246
     Name: isDefault, dtype: int64
     **********
-    
+
 
 - 例如可以看到异常值在两个变量上的分布几乎复合整体的分布，如果异常值都属于为1的用户数据里面代表什么呢？
 
@@ -826,8 +858,16 @@ data['loanAmnt_bin3'] = pd.qcut(data['loanAmnt'], 10, labels=False)
 3. 卡方分箱及其他分箱方法的尝试
  - 这一部分属于进阶部分，学有余力的同学可以自行搜索尝试。
 
+4.自动分箱方法
+
+5.分箱效果评估
+
 ### 3.3.5 特征交互
+
+
+
 - 交互特征的构造非常简单，使用起来却代价不菲。如果线性模型中包含有交互特征对，那它的训练时间和评分时间就会从 O(n) 增加到 O(n2)，其中 n 是单一特征的数量。
+- 特征交叉方法有哪些？
 
 
 ```python
@@ -870,12 +910,12 @@ print('Label Encoding 完成')
 ```
 
     100%|██████████| 4/4 [00:08<00:00,  2.04s/it]
-
+    
     Label Encoding 完成
-    
 
-    
-    
+
+​    
+​    
 
 #### 逻辑回归等模型要单独增加的特征工程
 - 对特征做归一化，去除相关性高的特征
@@ -1213,7 +1253,7 @@ lgb_train, lgb_test = lgb_model(x_train, y_train, x_test)
     lgb_scotrainre_list: [0.7306859913754798, 0.7317304414673989, 0.7332610441015461, 0.7289759386807912, 0.7337723979789789]
     lgb_score_mean: 0.7316851627208389
     lgb_score_std: 0.0017424259863954693
-    
+
 
 
 ```python
@@ -1236,14 +1276,9 @@ roc_auc_score(testA_result['isDefault'].values, lgb_test)
 
 特征工程是机器学习，甚至是深度学习中最为重要的一部分，在实际应用中往往也是所花费时间最多的一步。各种算法书中对特征工程部分的讲解往往少得可怜，因为特征工程和具体的数据结合的太紧密，很难系统地覆盖所有场景。本章主要是通过一些常用的方法来做介绍，例如缺失值异常值的处理方法详细对任何数据集来说都是适用的。但对于分箱等操作本章给出了具体的几种思路，需要读者自己探索。在特征工程中比赛和具体的应用还是有所不同的，在实际的金融风控评分卡制作过程中，由于强调特征的可解释性，特征分箱尤其重要。学有余力同学可以自行多尝试，希望大家在本节学习中有所收获。
 
-END.
+## 3.5参考
 
-【 言溪：Datawhale成员，金融风控爱好者。知乎地址：https://www.zhihu.com/people/exuding】
 
-关于Datawhale：
 
-Datawhale是一个专注于数据科学与AI领域的开源组织，汇集了众多领域院校和知名企业的优秀学习者，聚合了一群有开源精神和探索精神的团队成员。Datawhale 以“for the learner，和学习者一起成长”为愿景，鼓励真实地展现自我、开放包容、互信互助、敢于试错和勇于担当。同时 Datawhale 用开源的理念去探索开源内容、开源学习和开源方案，赋能人才培养，助力人才成长，建立起人与人，人与知识，人与企业和人与未来的联结。
 
-本次数据挖掘路径学习，专题知识将在天池分享，详情可关注Datawhale：
 
-![logo.png](https://img-blog.csdnimg.cn/2020090509294089.png)

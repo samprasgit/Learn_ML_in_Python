@@ -38,7 +38,7 @@
 
 ## 动态规划
 
-动态规划常常适用于**有重叠子问题**和**最优子结构**性质的问题，动态规划方法**所耗时间往往远少于朴素解法**。
+Dynamic programming，DP，动态规划常常适用于**有重叠子问题**和**最优子结构**性质的问题，动态规划方法**所耗时间往往远少于朴素解法**。
 
 ### 主要思想
 
@@ -732,4 +732,6 @@ def rob(self, nums: List[int]) -> int:
 #### 优秀GitHub项目：
 
 https://github.com/geekxh/hello-algorithm/
+
+[动态规划精讲一](https://leetcode-cn.com/leetbook/detail/dynamic-programming-1-plus/)
 
