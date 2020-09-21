@@ -25,6 +25,7 @@
       - [Wrapper （Recursive feature elimination，RFE）](#wrapper-recursive-feature-eliminationrfe)
       - [Embedded](#embedded)
   - [3.4 总结](#34-%E6%80%BB%E7%BB%93)
+  - [3.5参考](#35%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

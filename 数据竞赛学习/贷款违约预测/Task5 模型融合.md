@@ -2,16 +2,15 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Task5 模型融合](#task5-%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88)
-  - [5.1 学习目标](#51-%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87)
-  - [5.2 内容介绍](#52-%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D)
-  - [5.3 stacking\blending详解](#53-stacking%5Cblending%E8%AF%A6%E8%A7%A3)
-  - [5.4 代码示例](#54-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B)
-    - [5.4.1 平均：](#541-%E5%B9%B3%E5%9D%87)
-    - [5.4.2 投票](#542-%E6%8A%95%E7%A5%A8)
-    - [5.4.3 Stacking：](#543-stacking)
-    - [5.4.4 blending](#544-blending)
-  - [5.5 经验总结](#55-%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93)
+- [5.1 学习目标](#51-%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87)
+- [5.2 内容介绍](#52-%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D)
+- [5.3 stacking\blending详解](#53-stacking%5Cblending%E8%AF%A6%E8%A7%A3)
+- [5.4 代码示例](#54-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B)
+  - [5.4.1 平均：](#541-%E5%B9%B3%E5%9D%87)
+  - [5.4.2 投票](#542-%E6%8A%95%E7%A5%A8)
+  - [5.4.3 Stacking：](#543-stacking)
+  - [5.4.4 blending](#544-blending)
+- [5.5 经验总结](#55-%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
