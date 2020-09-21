@@ -913,19 +913,16 @@ print('Label Encoding 完成')
     
     Label Encoding 完成
 
-
-​    
-​    
-
 #### 逻辑回归等模型要单独增加的特征工程
 - 对特征做归一化，去除相关性高的特征
 - 归一化目的是让训练过程更好更快的收敛，避免特征大吃小的问题
 - 去除相关性是增加模型的可解释性，加快预测过程。
+- 线性归一化、z-score
 
 
 ```python
 # 举例归一化过程
-#伪代码
+# 伪代码
 for fea in [要归一化的特征列表]：
     data[fea] = ((data[fea] - np.min(data[fea])) / (np.max(data[fea]) - np.min(data[fea])))
 ```
@@ -1278,7 +1275,7 @@ roc_auc_score(testA_result['isDefault'].values, lgb_test)
 
 ## 3.5参考
 
+[Python实现半自动评分卡建模(附代码)](https://zhuanlan.zhihu.com/p/92916332)
 
-
-
+[控模型特征评估python脚本代码](https://zhuanlan.zhihu.com/p/111297905)
 
