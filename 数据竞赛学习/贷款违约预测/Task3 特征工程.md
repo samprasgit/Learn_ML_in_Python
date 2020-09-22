@@ -865,8 +865,6 @@ data['loanAmnt_bin3'] = pd.qcut(data['loanAmnt'], 10, labels=False)
 
 ### 3.3.5 特征交互
 
-
-
 - 交互特征的构造非常简单，使用起来却代价不菲。如果线性模型中包含有交互特征对，那它的训练时间和评分时间就会从 O(n) 增加到 O(n2)，其中 n 是单一特征的数量。
 - 特征交叉方法有哪些？
 
@@ -885,7 +883,7 @@ for col in ['grade', 'subGrade']:
 ```python
 # 其他衍生变量 mean 和 std
 for df in [data_train, data_test_a]:
-    for item in ['n0','n1','n2','n2.1','n4','n5','n6','n7','n8','n9','n10','n11','n12','n13','n14']:
+    for item in ['n0','n1','n2','n3','n4','n5','n6','n7','n8','n9','n10','n11','n12','n13','n14']:
         df['grade_to_mean_' + item] = df['grade'] / df.groupby([item])['grade'].transform('mean')
         df['grade_to_std_' + item] = df['grade'] / df.groupby([item])['grade'].transform('std')
 ```
