@@ -193,7 +193,7 @@ plt.show()
     Accuracy: 0.94 (+/- 0.04) [Random Forest]
     Accuracy: 0.91 (+/- 0.04) [Naive Bayes]
     Accuracy: 0.94 (+/- 0.04) [Stacking Classifier]
-    
+
 
 
 ![output_19_1.png](https://img-blog.csdnimg.cn/20200905100443646.png)
@@ -249,12 +249,8 @@ print("Val auc Score of Blending: %f" % (roc_auc_score(y_predict, y_submission))
 - stacking在众多比赛中大杀四方，但是跑过代码的小伙伴想必能感受到速度之慢，同时stacking多层提升幅度并不能抵消其带来的时间和内存消耗，所以实际环境中应用还是有一定的难度，同时在有答辩环节的比赛中，主办方也会一定程度上考虑模型的复杂程度，所以说并不是模型融合的层数越多越好的。
 - 当然在比赛中将加权平均、stacking、blending等混用也是一种策略，可能会收获意想不到的效果哦！
 
+## 5.6参考
 
----
-关于Datawhale：
+- [零基础数据挖掘入门系列(六) - 模型的融合技术大总结与结果部署](https://blog.csdn.net/wuzhongqiang/article/details/105012739)
+- 
 
-> Datawhale是一个专注于数据科学与AI领域的开源组织，汇集了众多领域院校和知名企业的优秀学习者，聚合了一群有开源精神和探索精神的团队成员。Datawhale 以“for the learner，和学习者一起成长”为愿景，鼓励真实地展现自我、开放包容、互信互助、敢于试错和勇于担当。同时 Datawhale 用开源的理念去探索开源内容、开源学习和开源方案，赋能人才培养，助力人才成长，建立起人与人，人与知识，人与企业和人与未来的联结。
-
-本次数据挖掘路径学习，专题知识将在天池分享，详情可关注Datawhale：
-
-![logo.png](https://img-blog.csdnimg.cn/2020090509294089.png)
