@@ -15,10 +15,10 @@ class Solution1:
             max_left, max_right = 0, 0
             for j in range(i, -1, -1):
                 max_left = max(max_left, height[j])
-                j -= 1
+
             for j in range(i, n):
                 max_right = max(max_right, height[j])
-                j += 1
+
             ans += min(max_left, max_right) - height[i]
 
         return ans
@@ -56,30 +56,70 @@ class Solution2:
         return ans
 
 
-# class Solution4:
+class Solution3:
 
-    #     def trap(self, height):
-    #         """
+    def trap(self, height):
+        """
 
-    #         双指针
+        双指针
+        时间复杂度：O(n)
 
-    #         Arguments:
-    #                 height {[type]} -- [description]
-    #         """
+        Arguments:
+                height {[type]} -- [description]
+        """
+        n = len(height)
+        ans = 0
+        left, right = 0, n - 1
+        left_max, right_max = 0, 0
+        while left < right:
+            if height[left] < height[right]:
+                if height[left] >= left_max:
+                    left_max = height[left]
+                else:
+                    ans += left_max - height[left]
+                left += 1
+            else:
+                if height[right] >= right_max:
+                    right_max = height[right]
+                else:
+                    ans += right_max - height[right]
+                right -= 1
 
-# class Solution4:
-
-#     def trap(self, height):
-#         """
-
-#         单调栈
-
-#         Arguments:
-#                 height {[type]} -- [description]
-#         """
+        return ans
 
 
-s = Solution2()
+class Solution4:
+
+    def trap(self, height):
+        """
+
+        单调栈 柱子递减
+
+
+        Arguments:
+                height {[type]} -- [description]
+        """
+        n = len(height)
+        if n < 3:
+            return 0
+        res, idx = 0, 0
+        stack = []
+        while idx < n:
+            while len(stack) > 0 and height[idx] > height[stack[-1]]:
+                top = stack.pop()
+                if len(stack) == 0:
+                    break
+                h = min(height[stack[-1]], height[idx]) - height[top]
+                dist = idx - stack[-1] - 1
+                res += (dsit * h)
+
+            stack.append(idx)
+            idx += 1
+
+        return res
+
+
+s = Solution3()
 height1 = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 height2 = [4, 2, 0, 3, 2, 5]
 print(s.trap(height1))
