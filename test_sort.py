@@ -40,7 +40,7 @@ def TopologicalSort(G):
 
 
 def topo_sort(G):
-        # 初始化所有顶点入度为0
+    # 初始化所有顶点入度为0
     in_degrees = dict((u, 0) for u in G)
     vertex_num = len(in_degrees)
     for u in G:
