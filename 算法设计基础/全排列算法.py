@@ -1,6 +1,6 @@
 
-# # 使用递归实现
-# # 回溯思想
+# 使用递归实现
+# 回溯思想
 
 
 # def permutations(nums, first, end):
@@ -23,7 +23,7 @@ temp = ["" for i in range(0, len(nums))]
 
 
 def permutations(nums, first):
-        # 递归出口
+    # 递归出口
     if first == len(nums):
         print(nums)
         return
