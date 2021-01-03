@@ -1,3 +1,7 @@
+import pandas as pd
+import numpy as np
+
+
 def CalcIV(Xvar, Yvar):
     N_0 = np.sum(Yvar == 0)
     N_1 = np.sum(Yvar == 1)
