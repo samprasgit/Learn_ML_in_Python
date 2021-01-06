@@ -1,8 +1,9 @@
-并查集思想：  压缩 权值
+#!/usr/bin/env python
+# _*_ coding: utf-8 _*_
+# Time : 2021/1/6 4:31 下午
+# Author : samprasgit
+# desc : 除法求值
 
-399 除法求值
-
-```python
 class UnionFind:
     def __init__(self):
         """
@@ -48,5 +49,3 @@ class UnionFind:
         """
         if x not in self.father:
             self.father[x] = None
-```
-
