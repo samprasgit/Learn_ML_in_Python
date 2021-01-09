@@ -94,11 +94,8 @@ class Solution4:
         """
 
         单调栈 柱子递减
-
-                idx 下标
-                stack 存储凹槽左边坐标
-
-
+        idx 下标
+        stack 存储凹槽左边坐标
         Arguments:
                 height {[type]} -- [description]
         """
@@ -110,7 +107,7 @@ class Solution4:
         while idx < n:
             while len(stack) > 0 and height[idx] > height[stack[-1]]:
                 top = stack.pop()
-                if len(stack) == 0:  # pop之后需要判断
+                if len(stack) == 0:  # 出栈之后需要判断
                     break
                 h = min(height[stack[-1]], height[idx]) - height[top]
                 dist = idx - stack[-1] - 1
@@ -122,7 +119,8 @@ class Solution4:
         return res
 
 
-s = Solution3()
-height1 = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
-height2 = [4, 2, 0, 3, 2, 5]
-print(s.trap(height1))
+if __name__ == "__main__":
+    s = Solution3()
+    height1 = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
+    height2 = [4, 2, 0, 3, 2, 5]
+    print(s.trap(height1))
