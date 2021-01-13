@@ -1,9 +1,5 @@
 # Datawhale 知识图谱组队学习 之 Task 2 基于医疗知识图谱的问答系统操作介绍
 
-> 文章编写人：芙蕖<br/>
-> github 地址：<br/>
-> 特别鸣谢：[QASystemOnMedicalGraph](https://github.com/zhihao-chen/QASystemOnMedicalGraph)
-
 ## 目录
 
 - [Datawhale 知识图谱组队学习 之 Task 2 基于医疗知识图谱的问答系统操作介绍](#datawhale-知识图谱组队学习-之-task-2-基于医疗知识图谱的问答系统操作介绍)
@@ -68,3 +64,4 @@
 ## 参考资料 
 
 1. [QASystemOnMedicalGraph](https://github.com/zhihao-chen/QASystemOnMedicalGraph)
+

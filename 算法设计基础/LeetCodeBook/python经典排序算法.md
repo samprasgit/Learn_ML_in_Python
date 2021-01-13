@@ -58,7 +58,7 @@
 - Out-place：占用额外内存
 
 
- 
+
 
 ## 1.冒泡排序
 
@@ -297,11 +297,21 @@
 
 - code  in  python 
 
-
-
-
-
-
+```python
+def shell_sort(alist):
+    n = len(alist)
+    gap = n // 2
+    while gap >= 1:
+        for i in range(gap,n):
+            while (i - gap) >= 0:
+                if alist[i] < alist[i-gap]:
+                    alist[i], alist[i-gap] = alist[i-gap], alist[i]
+                    i = i - gap
+                else:
+                    break
+        gap = gap // 2
+    return alist
+```
 
 ## 5.归并排序
 
