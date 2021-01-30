@@ -22,14 +22,9 @@ class Solution1:
 class Solution2:
 
     def findRepeatNumbers(self, nums):
-        '''    
+        """
         原地置换
-
-        [description]
-
-        Arguments:
-                nums {[type]} -- [description]
-        '''
+        """
         i = 0
         while i < len(nums):
             if nums[i] == i:
