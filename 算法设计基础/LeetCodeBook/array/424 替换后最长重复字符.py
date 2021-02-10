@@ -1,9 +1,14 @@
 # ! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import collections
+
+
 class Solution1:
     def characterReplacement(self, s, k):
-        import collections
+        """
+        滑动窗口
+        """
         char_num = collections.defaultdict(int)
         if s is None or len(s) == 0:
             return 0
