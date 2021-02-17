@@ -9,7 +9,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-### 题目
+### 题目描述
 
 给定一个非空的整数数组，返回其中出现频率前 **k** 高的元素。
 
@@ -28,6 +28,8 @@
 ```
 
 > 时间复杂度必须优于$O(nlog(n))$
+
+### 解题思路
 
 ### 解法一：排序算法
 
