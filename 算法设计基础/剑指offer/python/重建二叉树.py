@@ -44,17 +44,28 @@ class Solution:
         index = {element: i for i, element in enumerate(inorder)}
         return myBuilderTree(0, n - 1, 0, n - 1)
 
-
-
-
-    def buildTree(self,preorder,inorder):
+    def buildTree1(self, preorder, inorder):
         """
-        迭代
+        递归 -- 无重复节点二叉树
         时间复杂度：O(N)
         空间复杂度：O(N)
         """
-        
 
+        def recur(root, left, right):
+            # 递归终止条件
+            if left > right:
+                return
+            # 建立根节点
+            node = TreeNode(preorder[root])
+            # 划分左子树 根节点 右子树
+            i = dic[preorder[root]]
+            # 左子树递归
+            node.left = recur(root + 1, left, i - 1)
+            # 右子树递归
+            node.right = recur(i - left + root + 1, i + 1, right)
+            return node  # 回溯发挥根节点
 
-
-
+        dic = {}
+        for i in range(len(inorder)):
+            dic[inorder[i]] = i
+        return recur(0, 0, len(inorder) - 1)
