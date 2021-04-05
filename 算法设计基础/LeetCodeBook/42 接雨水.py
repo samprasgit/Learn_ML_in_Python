@@ -4,10 +4,9 @@ class Solution1:
         """
 
         暴力法，直接遍历
+        两边最大高度的较小值减去当前高度
         时间复杂度：O(n^2)
 
-        Arguments:
-                height {[type]} -- [description]
         """
         ans = 0
         n = len(height)
@@ -30,6 +29,8 @@ class Solution2:
         """
 
         动态规划
+        两次遍历
+        时间复杂度：O(N )
         Arguments:
                 height {[type]} -- [description]
 
@@ -120,7 +121,8 @@ class Solution4:
 
 
 if __name__ == "__main__":
-    s = Solution3()
+    s = Solution1()
     height1 = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
+    # 6
     height2 = [4, 2, 0, 3, 2, 5]
     print(s.trap(height1))
