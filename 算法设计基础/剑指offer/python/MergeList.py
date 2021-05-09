@@ -17,6 +17,10 @@ class Solution:
         # write code here
         '''
         递归
+        时间复杂度 O（m+n）
+        思路：
+        如果一个链表为空，返回另一个链表
+        如果L1节点的值比起L2小，下一个节点应该是l1,返回l1,在return之前，指定l1的下一个节点是L1.next和l2链表的合并后的节点
         '''
         if pHead1 == None and pHead2 == None:
             return None
@@ -33,7 +37,9 @@ class Solution:
 
     def Merge2(self, pHead1, pHead2):
         '''
-        非递归:
+        非递归:迭代
+        时间复杂度O(m+n)
+        思路：
         构建一个新的链表，然后挨个比较pHead1和pHead2的节点，直到有一个链表遍历完为止
         将没有遍历完的链表直接加在新的链表后面
         '''
